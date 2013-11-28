@@ -127,3 +127,5 @@ Then implement the `handleNotification` method to receive, and act, on the notif
   }
 ```
 
+#### Codesign for OS X Mavericks
+To codesign the Paddle framework for use on computers with OS X Mavericks, you should create a new 'Run Script' build phase. Make sure it is the very last build phase ran. Copy and paste the [MASProof-Frameworks script](https://github.com/pauldunahoo/MASProof-Frameworks) by @pauldunahoo into the build phase we created earlier. Now the Paddle framework will be codesigned using whatever codesign certificate you have selected in your Xcode project.
