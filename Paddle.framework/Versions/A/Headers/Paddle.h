@@ -34,6 +34,7 @@
     NSWindow *devMainWindow;
     
     BOOL isTimeTrial;
+    BOOL isOpen;
 }
 
 @property (nonatomic, retain) PADProductWindowController *productWindow;
@@ -42,6 +43,7 @@
 @property (nonatomic, retain) NSWindow *devMainWindow;
 
 @property (assign) BOOL isTimeTrial;
+@property (assign) BOOL isOpen;
 
 
 + (Paddle *)sharedInstance;
