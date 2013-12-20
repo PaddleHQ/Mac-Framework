@@ -1,3 +1,7 @@
+## 1.43
+Bugfixes:
+- Use NSAlert on Paddle generated errors and NSLog for all other errors.
+
 ## 1.42
 Bugfixes:
 - Switched from NSAlert to NSLog for errors
