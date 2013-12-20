@@ -4,8 +4,8 @@ This repository houses the latest releases, and up-to-date documentation for the
 
 --------------
 
-* **Latest Release Version:** 1.4
-* **Release Date:** 28th November 2013
+* **Latest Release Version:** 1.43
+* **Release Date:** 20th December 2013
 
 --------------
 
