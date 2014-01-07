@@ -1,3 +1,8 @@
+## 1.51
+Bugfixes:
+- Changed Licence to License
+- Internal reporting of device info to API fix
+
 ## 1.5
 Bugfixes:
 - Timeout increased to 30 seconds
