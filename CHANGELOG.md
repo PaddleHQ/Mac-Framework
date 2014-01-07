@@ -1,3 +1,12 @@
+## 1.5
+Bugfixes:
+- Timeout increased to 30 seconds
+- Licence activation, only one at a time, activation confirmation message
+
+Features:
+- Deactivate method included
+- Device info for API to improve activations and debugging
+
 ## 1.43
 Bugfixes:
 - Use NSAlert on Paddle generated errors and NSLog for all other errors.
