@@ -4,8 +4,8 @@ This repository houses the latest releases, and up-to-date documentation for the
 
 --------------
 
-* **Latest Release Version:** 1.43
-* **Release Date:** 20th December 2013
+* **Latest Release Version:** 1.51
+* **Release Date:** 8th January 2014
 
 --------------
 
@@ -127,3 +127,23 @@ Then implement the `handleNotification` method to receive, and act, on the notif
   }
 ```
 
+#### Deactivate
+You can now deactivate an active licence should you wish. The Paddle framework has introduced a delegate for this implementation.
+
+To use this, simply set your delegate and call the `deactivate` method. Once you have called this method you could show an activity indicator or other appropriate UI element.
+```
+[[Paddle sharedInstance] setDelegate:self];
+[[Paddle sharedInstance] deactivateLicence];
+```
+
+Then implement the `licenceDeactivated` delegate method to check if the licence was successfully deactivated or not. In this delegate method you could close your app or show the Paddle licensing window again, as well as hiding any UI elements indicating deactivation.
+```
+- (void)licenceDeactivated:(BOOL)deactivated message:(NSString *)deactivateMessage {
+    if (deactivated) {
+        //Licence was deactivated, show the licencing window again (trial will carry on as usual)
+        [[Paddle sharedInstance] showLicencing];
+    } else {
+        //Licence failed to deactivate
+    }
+}
+```

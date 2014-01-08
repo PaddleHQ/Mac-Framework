@@ -23,6 +23,12 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol PaddleDelegate <NSObject>
+
+@optional
+- (void)licenceDeactivated:(BOOL)deactivated message:(NSString *)deactivateMessage;
+@end
+
 @class PADProductWindowController;
 @class PADActivateWindowController;
 @class PADBuyWindowController;
@@ -34,7 +40,14 @@
     NSWindow *devMainWindow;
     
     BOOL isTimeTrial;
+    BOOL isOpen;
+    
+    #if !__has_feature(objc_arc)
+    id <PaddleDelegate> delegate;
+    #endif
 }
+
+@property (assign) id <PaddleDelegate> delegate;
 
 @property (nonatomic, retain) PADProductWindowController *productWindow;
 @property (nonatomic, retain) PADActivateWindowController *activateWindow;
@@ -42,6 +55,7 @@
 @property (nonatomic, retain) NSWindow *devMainWindow;
 
 @property (assign) BOOL isTimeTrial;
+@property (assign) BOOL isOpen;
 
 
 + (Paddle *)sharedInstance;
@@ -52,5 +66,7 @@
 - (void)showLicencing;
 - (NSString *)activatedLicenceCode;
 - (NSString *)activatedEmail;
+
+- (void)deactivateLicence;
 
 @end
