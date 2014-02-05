@@ -160,6 +160,10 @@ When Paddle Framework quits the app, there are to methods it can use:
 By default Paddle Framework uses `exit()` to quit an app. No notifications are sent to your app, it quits without warning. This limits the possibility of the user being able to continue using your app without paying.
 
 If your app needs to perform some method/function before quiting and/or you want the terminate notification to be sent then you can allow this by setting `canForceExit` to `NO`. This should be done before `startLicensing` is called. You can set this using the following:
-`[[Paddle sharedInstance] setCanForceExit:NO];`
+```
+[[Paddle sharedInstance] setCanForceExit:NO];
+```
 followed by the usual process of starting licensing:
-`[[Paddle sharedInstance] startLicensing:@"b012ef9a6...`
+```
+[[Paddle sharedInstance] startLicensing:@"b012ef9a6...
+```
