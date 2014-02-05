@@ -41,6 +41,7 @@
     
     BOOL isTimeTrial;
     BOOL isOpen;
+    BOOL canForceExit;
     
     #if !__has_feature(objc_arc)
     id <PaddleDelegate> delegate;
@@ -56,6 +57,7 @@
 
 @property (assign) BOOL isTimeTrial;
 @property (assign) BOOL isOpen;
+@property (assign) BOOL canForceExit;
 
 
 + (Paddle *)sharedInstance;
