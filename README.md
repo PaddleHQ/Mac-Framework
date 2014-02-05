@@ -4,8 +4,8 @@ This repository houses the latest releases, and up-to-date documentation for the
 
 --------------
 
-* **Latest Release Version:** 1.51
-* **Release Date:** 7th January 2014
+* **Latest Release Version:** 1.52
+* **Release Date:** 5th February 2014
 
 --------------
 
@@ -148,3 +148,22 @@ Then implement the `licenceDeactivated` delegate method to check if the licence 
 }
 ```
 
+### Developer Settings
+
+#### Can Force Exit
+When a trial has expired, and no valid licence has been activated, the user can no longer continue the trial - instead they are only given licencing options or an option to quit the app.
+
+When Paddle Framework quits the app, there are two methods it can use:
+* `NSApp Terminate`
+* `exit()`
+
+By default Paddle Framework uses `exit()` to quit an app. No notifications are sent to your app, it quits without warning. This limits the possibility of the user being able to continue using your app without paying.
+
+If your app needs to perform some method/function before quiting and/or you want the terminate notification to be sent then you can allow this by setting `canForceExit` to `NO`. This should be done before `startLicensing` is called. You can set this using the following:
+```
+[[Paddle sharedInstance] setCanForceExit:NO];
+```
+followed by the usual process of starting licensing:
+```
+[[Paddle sharedInstance] startLicensing:@"b012ef9a6...
+```
