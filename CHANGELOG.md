@@ -1,3 +1,10 @@
+## 1.52
+Bugfixes:
+- Licence changed to License in remaining locations
+- Strip whitespace and new line characters when pasting email/license
+- Added ActivityIndicator while checking license validity
+- Improved security when quitting app with expired trial and no license (see docs for options)
+
 ## 1.51
 Bugfixes:
 - Changed Licence to License
