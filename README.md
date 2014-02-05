@@ -151,9 +151,9 @@ Then implement the `licenceDeactivated` delegate method to check if the licence 
 ### Developer Settings
 
 #### Can Force Exit
-When a trial has expired, and no valid licence has been activated, the user can no longer continue the trial - instead they are only given licencing options or to quit the app.
+When a trial has expired, and no valid licence has been activated, the user can no longer continue the trial - instead they are only given licencing options or an option to quit the app.
 
-When Paddle Framework quits the app, there are to methods it can use:
+When Paddle Framework quits the app, there are two methods it can use:
 * `NSApp Terminate`
 * `exit()`
 
