@@ -42,6 +42,7 @@
     BOOL isTimeTrial;
     BOOL isOpen;
     BOOL canForceExit;
+    BOOL willShowLicensingWindow;
     
     #if !__has_feature(objc_arc)
     id <PaddleDelegate> delegate;
@@ -58,6 +59,7 @@
 @property (assign) BOOL isTimeTrial;
 @property (assign) BOOL isOpen;
 @property (assign) BOOL canForceExit;
+@property (assign) BOOL willShowLicensingWindow;
 
 
 + (Paddle *)sharedInstance;

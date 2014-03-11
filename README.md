@@ -4,8 +4,8 @@ This repository houses the latest releases, and up-to-date documentation for the
 
 --------------
 
-* **Latest Release Version:** 1.52
-* **Release Date:** 5th February 2014
+* **Latest Release Version:** 1.53
+* **Release Date:** 10th March 2014
 
 --------------
 
@@ -162,6 +162,17 @@ By default Paddle Framework uses `exit()` to quit an app. No notifications are s
 If your app needs to perform some method/function before quiting and/or you want the terminate notification to be sent then you can allow this by setting `canForceExit` to `NO`. This should be done before `startLicensing` is called. You can set this using the following:
 ```
 [[Paddle sharedInstance] setCanForceExit:NO];
+```
+followed by the usual process of starting licensing:
+```
+[[Paddle sharedInstance] startLicensing:@"b012ef9a6...
+```
+
+#### Disabling Display of Licensing Window
+
+If you wish to start the licensing process, but not display the licensing window under circumstances you optionally (the window will show by default) disable this by setting `willShowLicensingWindow` to `NO`. This should be done before `startLicensing` is called. You can set this using the following:
+```
+[[Paddle sharedInstance] setWillShowLicensingWindow:NO];
 ```
 followed by the usual process of starting licensing:
 ```

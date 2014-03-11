@@ -1,3 +1,13 @@
+## 1.53
+Features:
+- Added option to disable display of licensing view (willShowLicensingWindow)
+
+Bugfixes:
+- Improved de-activate licence cleanup
+- Miscellaneous visual/UI fixes
+- Improved unit tests
+- Updated copyright information for 2014
+
 ## 1.52
 Bugfixes:
 - Licence changed to License in remaining locations
