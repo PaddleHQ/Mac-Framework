@@ -3,7 +3,7 @@
 //  Paddle Test
 //
 //  Created by Louis Harwood on 10/05/2013.
-//  Copyright (c) 2013 Paddle. All rights reserved.
+//  Copyright (c) 2014 Paddle. All rights reserved.
 //
 
 #define kPADProductName @"product_name"

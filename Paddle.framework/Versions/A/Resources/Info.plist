@@ -17,11 +17,11 @@
 	<key>CFBundlePackageType</key>
 	<string>FMWK</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.53</string>
+	<string>1.54</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.53</string>
+	<string>1.54</string>
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
@@ -37,6 +37,6 @@
 	<key>DTXcodeBuild</key>
 	<string>5A1413</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2013 Paddle. All rights reserved.</string>
+	<string>Copyright © 2014 Paddle. All rights reserved.</string>
 </dict>
 </plist>

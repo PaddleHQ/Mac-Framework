@@ -1,3 +1,7 @@
+## 1.54
+Bugfixes:
+- Fix for product_image null value
+
 ## 1.53
 Features:
 - Added option to disable display of licensing view (willShowLicensingWindow)
