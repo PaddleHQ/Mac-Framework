@@ -1,3 +1,7 @@
+## 1.6
+Features:
+- Store activation_id on successful license activation for future verification
+
 ## 1.54
 Bugfixes:
 - Fix for product_image null value
