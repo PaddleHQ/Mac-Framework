@@ -1,3 +1,10 @@
+## 2.0
+Features
+- PaddleStoreKit (PSK) added to allow for In App Purchases
+- Display a 'store' for your products, an individual product or open a 'purchase' view instantly
+- Purchase verification for receipts
+- Valid receipts stored locally and can be re-verified at any time
+
 ## 1.6
 Features:
 - Store activation_id on successful license activation for future verification
