@@ -73,4 +73,9 @@
 
 - (void)deactivateLicence;
 
+
+- (void)setApiKey:(NSString *)apiKey;
+- (void)setVendorId:(NSString *)vendorId;
+- (void)setProductId:(NSString *)productId;
+
 @end
