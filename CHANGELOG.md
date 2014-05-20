@@ -1,5 +1,14 @@
+## 2.01
+Features:
+- Added `showStoreViewForProductIds:(NSArray *)productIds` to PSK
+- Added `startLicensing:(NSDictionary *)productInfo timeTrial:(BOOL)timeTrial withWindow:(NSWindow *)mainWindow` to Paddle. For starting licensing after settings keys
+- Added `paddleDidFailWithError:(NSError *)error` delegate method to Paddle.h
+
+Bugfixes:
+- Error handling of no API keys set when initiating
+
 ## 2.0
-Features
+Features:
 - PaddleStoreKit (PSK) added to allow for In App Purchases
 - Display a 'store' for your products, an individual product or open a 'purchase' view instantly
 - Purchase verification for receipts

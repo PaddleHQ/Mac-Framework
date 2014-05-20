@@ -27,6 +27,7 @@
 
 @optional
 - (void)licenceDeactivated:(BOOL)deactivated message:(NSString *)deactivateMessage;
+- (void)paddleDidFailWithError:(NSError *)error;
 @end
 
 @class PADProductWindowController;
@@ -64,6 +65,7 @@
 
 + (Paddle *)sharedInstance;
 - (void)startLicensing:(NSString *)apiKey vendorId:(NSString *)vendorId productId:(NSString *)productId timeTrial:(BOOL)timeTrial productInfo:(NSDictionary *)productInfo withWindow:(NSWindow *)mainWindow;
+- (void)startLicensing:(NSDictionary *)productInfo timeTrial:(BOOL)timeTrial withWindow:(NSWindow *)mainWindow;
 
 - (NSNumber *)daysRemainingOnTrial;
 - (BOOL)productActivated;

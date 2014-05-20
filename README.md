@@ -4,12 +4,14 @@ This repository houses the latest releases, and up-to-date documentation for the
 
 --------------
 
-* **Latest Release Version:** 2.0
-* **Release Date:** 19th May 2014
+* **Latest Release Version:** 2.01
+* **Release Date:** 20th May 2014
 
 --------------
 
 _**Note:** Please liase with your Paddle contact/ account manager if you have any integration issues or concerns._
+
+_**Note:** Please see the Wiki for details on setting up PaddleStoreKit._
 
 ### Basic Setup
 To setup the Paddle licencing framework there are just a few simple steps:
