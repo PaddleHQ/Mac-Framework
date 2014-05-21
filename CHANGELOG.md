@@ -1,3 +1,8 @@
+## 2.02
+Bugfixes:
+- Product icon display issue
+- Preparation for local verification
+
 ## 2.01
 Features:
 - Added `showStoreViewForProductIds:(NSArray *)productIds` to PSK
