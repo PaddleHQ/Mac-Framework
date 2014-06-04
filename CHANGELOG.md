@@ -1,3 +1,9 @@
+## 2.1
+Bugfixes:
+- Paypal payment window
+- Fixed 'test  product' text issue
+- Encryption issues
+
 ## 2.02
 Bugfixes:
 - Product icon display issue
