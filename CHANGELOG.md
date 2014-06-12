@@ -1,3 +1,11 @@
+# 2.11
+Bugfixes:
+- Truncated pricing in certain localizations
+- Conflicting class names with other popular OS classes
+
+Features:
+- App descriptions displayed and sized appropriately
+
 ## 2.1
 Bugfixes:
 - Paypal payment window

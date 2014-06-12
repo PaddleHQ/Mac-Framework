@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@class PSKReceipt;
+#import "PSKReceipt.h"
 
 typedef enum productTypes
 {
@@ -45,6 +44,7 @@ typedef enum productTypes
 //Store View
 - (void)showStoreView;
 - (void)showStoreViewForProductType:(ProductType)productType;
+- (void)showStoreViewForProductIds:(NSArray *)productIds;
 
 
 //Product View
