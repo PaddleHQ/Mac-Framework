@@ -140,6 +140,36 @@ Then implement the `handleNotification` method to receive, and act, on the notif
   }
 ```
 
+#### Showing the Licensing Window before MainWindow
+Depending on your app you may wish to display the licensing window before anything else and then show the MainWindow when a trial is continued or a license is activated.
+
+To achieve this, first of all show the licensing window as usual but pass `nil` to the `withWindow:` parameter. This will display the licensing window as a modal window rather than an NSSheet attached to the mainWindow.
+```
+	[[Paddle sharedInstance] startLicensing:productInfo timeTrial:YES withWindow:nil];
+```
+
+You should register an observer to receive notifications for either `kPADContinue` or `kPADActivated`.
+```
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:kPADContinue object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:kPADActivated object:nil];
+```
+
+When the observer receives either of these notifications you can continue the launch of your app and display the mainWindow.
+```
+	- (void)handleNotification:(NSNotification *)notification
+	{
+	    if ([notification isKindOfClass:[NSNotification class]])
+	    {
+	        if ([[notification name] isEqualToString:kPADContinue] || [[notification name] isEqualToString:kPADActivated])
+	        {
+	            [[NSNotificationCenter defaultCenter] removeObserver:self name:[notification name] object:nil];
+	
+	            //Show the main window, etc.
+	        }
+	    }
+	}
+```
+
 #### Deactivate
 You can now deactivate an active licence should you wish. The Paddle framework has introduced a delegate for this implementation.
 
