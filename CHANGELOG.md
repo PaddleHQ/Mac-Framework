@@ -1,4 +1,9 @@
-# 2.11
+## 2.12
+Bugfixes:
+- Fixed modal web view when being used with JDK based apps
+- PSKReceipt delegate issue on some implementations
+
+## 2.11
 Bugfixes:
 - Truncated pricing in certain localizations
 - Conflicting class names with other popular OS classes
