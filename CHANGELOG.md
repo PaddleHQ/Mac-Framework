@@ -1,3 +1,7 @@
+## 2.13
+Bugfixes:
+- SSL/Verify delegate method fix. Some products were able to verify but delegate methods not being called
+
 ## 2.12
 Bugfixes:
 - Fixed modal web view when being used with JDK based apps
