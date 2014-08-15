@@ -1,3 +1,9 @@
+## 2.15
+Bugfixes:
+- Supports Retina displays on Purchase view
+- Fixed Yosemite shadow bug
+- Purchase view now draggable
+
 ## 2.13
 Bugfixes:
 - SSL/Verify delegate method fix. Some products were able to verify but delegate methods not being called
