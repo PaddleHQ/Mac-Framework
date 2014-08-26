@@ -1,3 +1,7 @@
+## 2.16
+Bugfixes:
+- Last activated date updated on successful verification
+
 ## 2.15
 Bugfixes:
 - Supports Retina displays on Purchase view
