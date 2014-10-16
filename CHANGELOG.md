@@ -1,3 +1,7 @@
+## 2.17
+Features:
+- UI updated for Yosemite
+
 ## 2.16
 Bugfixes:
 - Last activated date updated on successful verification

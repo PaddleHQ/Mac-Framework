@@ -44,6 +44,7 @@
     BOOL isOpen;
     BOOL canForceExit;
     BOOL willShowLicensingWindow;
+    BOOL hasTrackingStarted;
     
     #if !__has_feature(objc_arc)
     id <PaddleDelegate> delegate;
@@ -61,10 +62,11 @@
 @property (assign) BOOL isOpen;
 @property (assign) BOOL canForceExit;
 @property (assign) BOOL willShowLicensingWindow;
+@property (assign) BOOL hasTrackingStarted;
 
 
 + (Paddle *)sharedInstance;
-- (void)startLicensing:(NSString *)apiKey vendorId:(NSString *)vendorId productId:(NSString *)productId timeTrial:(BOOL)timeTrial productInfo:(NSDictionary *)productInfo withWindow:(NSWindow *)mainWindow;
+- (void)startLicensing:(NSString *)apiKey vendorId:(NSString *)vendorId productId:(NSString *)productId timeTrial:(BOOL)timeTrial productInfo:(NSDictionary *)productInfo withWindow:(NSWindow *)mainWindow __deprecated;
 - (void)startLicensing:(NSDictionary *)productInfo timeTrial:(BOOL)timeTrial withWindow:(NSWindow *)mainWindow;
 
 - (NSNumber *)daysRemainingOnTrial;
@@ -79,5 +81,8 @@
 - (void)setApiKey:(NSString *)apiKey;
 - (void)setVendorId:(NSString *)vendorId;
 - (void)setProductId:(NSString *)productId;
+
+- (void)setCustomProductHeading:(NSString *)productHeading;
+- (void)disableTrial:(BOOL)trialSetting;
 
 @end
