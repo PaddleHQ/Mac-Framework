@@ -45,6 +45,7 @@
     BOOL canForceExit;
     BOOL willShowLicensingWindow;
     BOOL hasTrackingStarted;
+    BOOL willSimplifyViews;
     
     #if !__has_feature(objc_arc)
     id <PaddleDelegate> delegate;
@@ -63,6 +64,7 @@
 @property (assign) BOOL canForceExit;
 @property (assign) BOOL willShowLicensingWindow;
 @property (assign) BOOL hasTrackingStarted;
+@property (assign) BOOL willSimplifyViews;
 
 
 + (Paddle *)sharedInstance;

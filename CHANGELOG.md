@@ -1,6 +1,8 @@
-## 2.17
+## 2.18
 Features:
 - UI updated for Yosemite
+- Licensing windows are now draggable when not displayed as a sheet
+- Grammar correction number of days remaining label
 
 ## 2.16
 Bugfixes:
