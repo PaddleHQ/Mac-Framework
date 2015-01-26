@@ -21,36 +21,43 @@ typedef enum productTypes
 - (void)PSKDidFailWithError:(NSError *)error;
 - (void)PSKDidCancel;
 
+@optional
+- (void)PSKProductsReceived:(NSArray *)products;
+
 @end
 
 @class PSKPurchaseWindowController;
 @class PSKStoreWindowController;
 @class PSKProductWindowController;
+@class PSKProductController;
 
 @interface PaddleStoreKit : NSObject {
     id <PaddleStoreKitDelegate> delegate;
     PSKPurchaseWindowController *purchaseWindow;
     PSKStoreWindowController *storeWindow;
     PSKProductWindowController *productWindow;
+    PSKProductController *productController;
 }
 
 @property (assign) id <PaddleStoreKitDelegate> delegate;
 @property (nonatomic, retain) PSKPurchaseWindowController *purchaseWindow;
 @property (nonatomic, retain) PSKStoreWindowController *storeWindow;
 @property (nonatomic, retain) PSKProductWindowController *productWindow;
+@property (nonatomic, retain) PSKProductController *productController;
 
 + (PaddleStoreKit *)sharedInstance;
 
-//Store View
+//Store
 - (void)showStoreView;
 - (void)showStoreViewForProductType:(ProductType)productType;
 - (void)showStoreViewForProductIds:(NSArray *)productIds;
 
 
-//Product View
+//Product
 - (void)showProduct:(NSString *)productId;
+- (void)allProducts;
 
-//Purchase View
+//Purchase
 - (void)purchaseProduct:(NSString *)productId;
 
 //Receipts

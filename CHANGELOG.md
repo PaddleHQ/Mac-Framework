@@ -1,3 +1,13 @@
+## 2.2
+Features:
+- Paddle Analytics Kit
+- License and product data storage moved to custom storage
+- Trial data more secure
+- User email included in purchase receipts
+- Allows for feature limited trials after time trial completion
+- Custom product view headings
+- Allows for custom activation alerts
+
 ## 2.18
 Features:
 - UI updated for Yosemite
