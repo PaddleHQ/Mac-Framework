@@ -1,3 +1,10 @@
+## 2.2.1
+Bugfixes:
+- Improved migration script from < 2.2 versions
+- NSNotificationCenter notifications fix
+- Friendly license activation message
+- Continuing Time Trial button text changed from 'Quit' to 'Close'
+
 ## 2.2
 Features:
 - Paddle Analytics Kit
