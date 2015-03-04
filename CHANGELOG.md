@@ -1,3 +1,9 @@
+## 2.2.2
+Bugfixes:
+- Improved validation of analytics data
+- Preventing too many attempted connections to analytics
+- Improving timeout errors on license activation
+
 ## 2.2.1
 Bugfixes:
 - Improved migration script from < 2.2 versions
