@@ -3,8 +3,8 @@
 //  Paddle Test
 //
 //  Created by Louis Harwood on 10/05/2013.
-//  Copyright (c) 2014 Paddle. All rights reserved.
-//
+//  Copyright (c) 2015 Paddle. All rights reserved.
+//  Version: 2.2.3
 
 #define kPADProductName @"name"
 #define kPADOnSale @"on_sale"
@@ -91,5 +91,7 @@
 
 - (void)setCustomProductHeading:(NSString *)productHeading;
 - (void)disableTrial:(BOOL)trialSetting;
+- (void)resetTrialOnVersionUpdateForMajorOnly:(BOOL)onlyMajor;
+
 
 @end

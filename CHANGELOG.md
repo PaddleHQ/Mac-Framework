@@ -1,3 +1,8 @@
+## 2.2.3
+Features:
+- Debugging of time trials
+- Resetting time trials for app version updates
+
 ## 2.2.2
 Bugfixes:
 - Improved validation of analytics data
