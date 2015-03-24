@@ -4,7 +4,7 @@
 //
 //  Created by Louis Harwood on 10/05/2013.
 //  Copyright (c) 2015 Paddle. All rights reserved.
-//  Version: 2.2.3
+//  Version: 2.2.4
 
 #define kPADProductName @"name"
 #define kPADOnSale @"on_sale"
@@ -92,6 +92,7 @@
 - (void)setCustomProductHeading:(NSString *)productHeading;
 - (void)disableTrial:(BOOL)trialSetting;
 - (void)resetTrialOnVersionUpdateForMajorOnly:(BOOL)onlyMajor;
+- (void)overridePrice:(NSString *)price;
 
 
 @end

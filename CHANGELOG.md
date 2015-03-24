@@ -1,3 +1,7 @@
+## 2.2.4
+Features:
+- Ability to override product price
+
 ## 2.2.3
 Features:
 - Debugging of time trials
