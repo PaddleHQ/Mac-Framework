@@ -24,6 +24,7 @@ typedef enum appStores
 + (void)payment:(NSNumber *)amount currency:(NSString *)currency product:(NSString *)product store:(Store)store;
 
 + (void)disableTracking;
++ (void)enableTracking;
 
 + (void)enableOptin;
 + (BOOL)isOptedIn;
