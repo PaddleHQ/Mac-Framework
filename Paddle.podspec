@@ -16,7 +16,6 @@ Pod::Spec.new do |s|
   s.platform = :osx, '10.7'
   s.source   = { :http => "https://github.com/PaddleHQ/Mac-Framework/archive/v2.2.4.tar.gz" }
 
-  s.public_header_files = 'Paddle.framework/Headers/*.h'
   s.vendored_framework  = 'Paddle.framework'
   s.resources           = 'Paddle.framework'
   s.xcconfig            = { 'FRAMEWORK_SEARCH_PATHS' => '"${PODS_ROOT}/Paddle"' }
