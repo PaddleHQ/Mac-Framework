@@ -4,7 +4,7 @@
 //
 //  Created by Louis Harwood on 10/05/2013.
 //  Copyright (c) 2015 Paddle. All rights reserved.
-//  Version: 2.2.4
+//  Version: 2.2.5
 
 #define kPADProductName @"name"
 #define kPADOnSale @"on_sale"
@@ -75,6 +75,7 @@
 + (Paddle *)sharedInstance;
 - (void)startLicensing:(NSString *)apiKey vendorId:(NSString *)vendorId productId:(NSString *)productId timeTrial:(BOOL)timeTrial productInfo:(NSDictionary *)productInfo withWindow:(NSWindow *)mainWindow __deprecated;
 - (void)startLicensing:(NSDictionary *)productInfo timeTrial:(BOOL)timeTrial withWindow:(NSWindow *)mainWindow;
+- (void)startPurchase;
 
 - (NSNumber *)daysRemainingOnTrial;
 - (BOOL)productActivated;
@@ -91,6 +92,8 @@
 
 - (void)setCustomProductHeading:(NSString *)productHeading;
 - (void)disableTrial:(BOOL)trialSetting;
+- (void)disableLicenseMigration;
+- (void)disableTrialResetOnDeactivate;
 - (void)resetTrialOnVersionUpdateForMajorOnly:(BOOL)onlyMajor;
 - (void)overridePrice:(NSString *)price;
 

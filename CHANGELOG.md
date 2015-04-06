@@ -1,3 +1,12 @@
+## 2.2.5
+Features:
+- startPurchase method for launching straight into the buy view for the product
+- disableLicenseMigration method to prevent old licenses from < 2.2.x SDK from being transferred
+- disableTrialResetOnDeactivate method to NOT reset trial periods when an activation is deactivated
+
+Bugfixes:
+- Analytics data is NOT sent when an app is run from Xcode/debugger for more accurate data
+
 ## 2.2.4
 Features:
 - Ability to override product price

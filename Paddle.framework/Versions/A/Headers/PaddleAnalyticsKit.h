@@ -30,7 +30,4 @@ typedef enum appStores
 + (BOOL)isOptedIn;
 + (void)presentOptinDialog;
 
-+ (void)useSharedStarage;
-+ (void)isExtension;
-
 @end
