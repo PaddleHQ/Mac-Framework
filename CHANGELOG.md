@@ -1,3 +1,11 @@
+## 2.2.6
+Bugfixes:
+- Deactivate issue when for older licenses fixed
+
+Features:
+- PSK Purchase view responds to Esc key for closing
+- Delegate method willShowBuyWindow for overriding purchasing behaviour
+
 ## 2.2.5
 Features:
 - startPurchase method for launching straight into the buy view for the product
