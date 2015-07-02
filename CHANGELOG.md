@@ -1,3 +1,12 @@
+# 2.3.0
+Features:
+- PaddleToolKit
+	- Happiness
+	- Rating
+	- Feedback
+	- Email Subscribe
+	- Scheduler
+
 ## 2.2.6
 Bugfixes:
 - Deactivate issue when for older licenses fixed

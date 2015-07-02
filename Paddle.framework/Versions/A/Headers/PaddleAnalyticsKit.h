@@ -30,13 +30,7 @@ typedef enum appStores
 + (BOOL)isOptedIn;
 + (void)presentOptinDialog;
 
-#if PADDLEIOS==1
-//Enable storage in AppGroups for WatchKit extensions
-+ (void)useSharedStorage:(NSString *)appGroup;
-+ (void)activateWatchKit;
-+ (void)deactivateWatchKit;
-+ (void)trackGlance:(NSString *)glanceName;
-+ (void)trackNotification:(NSString *)notificationName;
-#endif
+
+
 
 @end

@@ -18,7 +18,6 @@ Pod::Spec.new do |s|
 
   s.vendored_framework  = 'Paddle.framework'
   s.resources           = 'Paddle.framework'
-  s.xcconfig            = { 'FRAMEWORK_SEARCH_PATHS' => '"${PODS_ROOT}/Paddle"' }
   s.requires_arc        = false
   s.framework           = 'WebKit';
 end

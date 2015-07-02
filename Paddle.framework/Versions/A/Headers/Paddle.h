@@ -30,6 +30,7 @@
 - (void)licenceDeactivated:(BOOL)deactivated message:(NSString *)deactivateMessage;
 - (void)paddleDidFailWithError:(NSError *)error;
 - (BOOL)willShowBuyWindow;
+- (void)productDataReceived;
 @end
 
 @class PADProductWindowController;
