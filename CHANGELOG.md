@@ -1,3 +1,7 @@
+# 2.3.1
+Bugfixes:
+- Layout and shadow issues in PTK
+
 # 2.3.0
 Features:
 - PaddleToolKit
