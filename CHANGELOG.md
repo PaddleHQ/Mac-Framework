@@ -1,3 +1,13 @@
+# 2.3.2
+Features:
+- Scheduler includes analytics events scheduling: next event.name
+- Inclusion of default license
+- Started moving to new v3 API
+
+Bugfixes:
+- Licence changed to License
+- Fix 'week' schedules
+
 # 2.3.1
 Bugfixes:
 - Layout and shadow issues in PTK
