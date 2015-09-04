@@ -16,7 +16,6 @@
 @end
 
 @interface PADProduct : NSObject <NSURLConnectionDelegate> {
-    id <PADProductDelegate> delegate;
     NSMutableData *receivedData;
 }
 

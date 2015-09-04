@@ -32,7 +32,7 @@ typedef enum productTypes
 @class PSKProductController;
 
 @interface PaddleStoreKit : NSObject {
-    id <PaddleStoreKitDelegate> delegate;
+    id <PaddleStoreKitDelegate> __unsafe_unretained delegate;
     PSKPurchaseWindowController *purchaseWindow;
     PSKStoreWindowController *storeWindow;
     PSKProductWindowController *productWindow;

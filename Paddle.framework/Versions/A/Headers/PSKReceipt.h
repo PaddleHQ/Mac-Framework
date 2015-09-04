@@ -16,7 +16,6 @@
 @end
 
 @interface PSKReceipt : NSObject {
-    id <PSKReceiptDelegate> delegate;
     NSMutableData *receivedData;
     NSString *productId;
     NSString *token;
