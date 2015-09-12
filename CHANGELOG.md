@@ -1,3 +1,9 @@
+# 2.3.4
+Bugfixes:
+- Fixed issue for < 3 character analytics event names
+- Ensure analytics data is always sent over https
+- Fixed issues regarding licences not being stored correctly
+
 # 2.3.2
 Features:
 - Scheduler includes analytics events scheduling: next event.name
