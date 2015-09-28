@@ -4,7 +4,7 @@
 //
 //  Created by Louis Harwood on 10/05/2013.
 //  Copyright (c) 2015 Paddle. All rights reserved.
-//  Version: 2.2.5
+//  Version: 2.3.5
 
 #define kPADProductName @"name"
 #define kPADOnSale @"on_sale"

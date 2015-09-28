@@ -1,3 +1,9 @@
+# 2.3.5
+Bugfixes:
+- UI fixes for OS X 10.11
+- Centering licencing windows
+- Fix for lost licences
+
 # 2.3.4
 Bugfixes:
 - Fixed issue for < 3 character analytics event names
