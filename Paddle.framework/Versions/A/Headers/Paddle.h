@@ -4,7 +4,7 @@
 //
 //  Created by Louis Harwood on 10/05/2013.
 //  Copyright (c) 2015 Paddle. All rights reserved.
-//  Version: 2.3.5
+//  Version: 2.3.6
 
 #define kPADProductName @"name"
 #define kPADOnSale @"on_sale"
@@ -22,6 +22,7 @@
 #define kPADContinue @"Continue"
 
 #import <Foundation/Foundation.h>
+#import <Cocoa/Cocoa.h>
 
 @protocol PaddleDelegate <NSObject>
 
