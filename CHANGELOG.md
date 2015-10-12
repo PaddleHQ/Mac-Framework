@@ -2,7 +2,6 @@
 Bugfixes:
 - JSON Parsing, nil data, issue resolved
 - Window centering
-- Including modules in framework
 - Import Cocoa in header for Swift support
 
 # 2.3.5
