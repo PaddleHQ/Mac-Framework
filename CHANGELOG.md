@@ -1,3 +1,8 @@
+# 2.3.7
+Bugfixes:
+- Fixed issue where trial windows sometimes do not dismiss correctly
+- Fixed paypal loading issue in PSK
+
 # 2.3.6
 Bugfixes:
 - JSON Parsing, nil data, issue resolved
