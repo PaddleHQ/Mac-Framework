@@ -1,3 +1,9 @@
+# 2.3.8
+Bugfixes:
+- Appropriate error message when trying to activate with empty licence code
+- Removed memory leak when gathering hardware data
+- Fixed small deactivate bug
+
 # 2.3.7
 Bugfixes:
 - Fixed issue where trial windows sometimes do not dismiss correctly
