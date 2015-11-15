@@ -1,3 +1,8 @@
+# 2.3.9
+Bugfixes:
+- Fixed issue preventing existing/activated licences from being displayed using showLicencing
+- Stopped Paypal IAP window from using runloops other than main to fix non-responsive issue
+
 # 2.3.8
 Bugfixes:
 - Appropriate error message when trying to activate with empty licence code
