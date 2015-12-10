@@ -1,3 +1,13 @@
+# 2.4.0
+Features:
+- Localization for 12 languages
+- TrialExpired Notifications
+- Passthrough data on purchases
+
+Bugfixes:
+- Resolved a number of memory leaks
+- Resetting of trials in development environment improved
+
 # 2.3.9
 Bugfixes:
 - Fixed issue preventing existing/activated licences from being displayed using showLicencing

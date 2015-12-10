@@ -20,6 +20,7 @@
 
 #define kPADActivated @"Activated"
 #define kPADContinue @"Continue"
+#define kPADTrialExpired @"TrialExpired"
 
 #import <Foundation/Foundation.h>
 #import <Cocoa/Cocoa.h>
@@ -99,6 +100,7 @@
 - (void)disableTrialResetOnDeactivate;
 - (void)resetTrialOnVersionUpdateForMajorOnly:(BOOL)onlyMajor;
 - (void)overridePrice:(NSString *)price;
+- (void)setPassthrough:(NSString *)passthrough;
 
 
 @end
