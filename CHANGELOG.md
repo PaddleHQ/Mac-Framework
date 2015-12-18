@@ -1,3 +1,8 @@
+# 2.4.1
+Features:
+- IAP Recovery for PaddleStoreKit
+- Set base language to en-US
+
 # 2.4.0
 Features:
 - Localization for 12 languages

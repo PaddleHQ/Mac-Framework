@@ -59,6 +59,7 @@ typedef enum productTypes
 
 //Purchase
 - (void)purchaseProduct:(NSString *)productId;
+- (void)recoverPurchases;
 
 //Receipts
 - (NSArray *)validReceipts;
