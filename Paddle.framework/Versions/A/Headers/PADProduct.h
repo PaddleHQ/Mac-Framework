@@ -19,7 +19,7 @@
     NSMutableData *receivedData;
 }
 
-@property (assign) id <PADProductDelegate> delegate;
+@property (assign) id delegate;
 
 - (void)productInfo:(NSString *)productId apiKey:(NSString *)apiKey vendorId:(NSString *)vendorId;
 

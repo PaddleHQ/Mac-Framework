@@ -1,3 +1,8 @@
+# 2.4.2
+Bugfixes:
+- Improved price override to deal with lack of keys on first run
+- Prevented licences from being deactivated if API side deactivation fails
+
 # 2.4.1
 Features:
 - IAP Recovery for PaddleStoreKit
