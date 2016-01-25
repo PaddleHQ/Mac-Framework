@@ -86,9 +86,9 @@
 - (void)showLicencing;
 - (NSString *)activatedLicenceCode;
 - (NSString *)activatedEmail;
+- (void)showActivateLicence;
 
 - (void)deactivateLicence;
-
 
 - (void)setApiKey:(NSString *)apiKey;
 - (void)setVendorId:(NSString *)vendorId;

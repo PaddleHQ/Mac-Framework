@@ -1,3 +1,13 @@
+# 2.4.3
+Bugfixes:
+- Licencing window now uses the local currency where possible
+- Analytics crash involving writing from multiple threads fixed
+- Price override now works on first launch
+
+Features:
+- Ability to launch licence activation window directly
+- Delegate methods for Happiness and Rating tools in PTK
+
 # 2.4.2
 Bugfixes:
 - Improved price override to deal with lack of keys on first run

@@ -14,6 +14,10 @@
 @class PTKEmail;
 @class PTKThanks;
 
+@protocol PaddleToolkitDelegate <NSObject>
+- (void)PTKToolSubmitted:(NSString *)tool withValue:(id)value;
+@end
+
 @interface PaddleToolKit : NSObject {
     PTKHappiness *happinessView;
     PTKRate *rateView;
@@ -22,6 +26,7 @@
     PTKThanks *thanksView;
 }
 
+@property (assign) id delegate;
 @property (nonatomic, strong) PTKHappiness *happinessView;
 @property (nonatomic, strong) PTKRate *rateView;
 @property (nonatomic, strong) PTKFeedback *feedbackView;
