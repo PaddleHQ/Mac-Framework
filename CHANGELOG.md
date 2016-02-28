@@ -1,3 +1,8 @@
+# 2.4.4
+Bugfixes:
+- Force locale in PAK for better date/time handling
+- Use UUID when en0 is not available. Fix for https://support.apple.com/en-us/HT6672
+
 # 2.4.3
 Bugfixes:
 - Licencing window now uses the local currency where possible
