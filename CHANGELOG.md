@@ -1,3 +1,11 @@
+# 3.0.0
+Features:
+- Remote verification
+- Remote deactivation
+- Silent licensing
+- Purchase/Activate methods with block callbacks
+- Improved security of local licenses
+
 # 2.4.4
 Bugfixes:
 - Force locale in PAK for better date/time handling

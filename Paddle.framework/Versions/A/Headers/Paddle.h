@@ -4,7 +4,7 @@
 //
 //  Created by Louis Harwood on 10/05/2013.
 //  Copyright (c) 2016 Paddle. All rights reserved.
-//  Version: 2.4.4
+//  Version: 2.4.5
 
 #define kPADProductName @"name"
 #define kPADOnSale @"on_sale"
@@ -33,6 +33,8 @@
 - (void)paddleDidFailWithError:(NSError *)error;
 - (BOOL)willShowBuyWindow;
 - (void)productDataReceived;
+- (BOOL)shouldDestroyLicenceOnVerificationFail;
+- (int)failedAttemptsBeforeLicenceDestruction;
 @end
 
 @class PADProductWindowController;
@@ -53,6 +55,7 @@
     BOOL willSimplifyViews;
     BOOL willShowActivationAlert;
     BOOL willContinueAtTrialEnd;
+    BOOL isSiteLicensed;
     
     #if !__has_feature(objc_arc)
     id <PaddleDelegate> delegate;
@@ -74,12 +77,16 @@
 @property (assign) BOOL willSimplifyViews;
 @property (assign) BOOL willShowActivationAlert;
 @property (assign) BOOL willContinueAtTrialEnd;
+@property (assign) BOOL isSiteLicensed;
 
 
 + (Paddle *)sharedInstance;
-- (void)startLicensing:(NSString *)apiKey vendorId:(NSString *)vendorId productId:(NSString *)productId timeTrial:(BOOL)timeTrial productInfo:(NSDictionary *)productInfo withWindow:(NSWindow *)mainWindow __deprecated;
 - (void)startLicensing:(NSDictionary *)productInfo timeTrial:(BOOL)timeTrial withWindow:(NSWindow *)mainWindow;
+- (void)startLicensingSilently:(NSDictionary *)productInfo timeTrial:(BOOL)timeTrial;
 - (void)startPurchase;
+- (void)startPurchaseWithWindow:(NSWindow *)window completionBlock:(void (^)(NSString *email, NSString *licenceCode, BOOL activate))completionBlock;
+- (void)startExternalPurchase;
+- (void)purchaseProductId:(NSString *)productId withWindow:(NSWindow *)window completionBlock:(void (^)(NSString *response, NSString *email, BOOL completed, NSError *error))completionBlock;
 
 - (NSNumber *)daysRemainingOnTrial;
 - (BOOL)productActivated;
@@ -87,8 +94,11 @@
 - (NSString *)activatedLicenceCode;
 - (NSString *)activatedEmail;
 - (void)showActivateLicence;
+- (void)activateLicence:(NSString *)licenceCode email:(NSString *)email withCompletionBlock:(void (^)(BOOL activated, NSError *error))completionBlock;
+- (void)verifyLicenceWithCompletionBlock:(void (^)(BOOL verified, NSError *error))completionBlock;
 
 - (void)deactivateLicence;
+- (void)deactivateLicenceWithCompletionBlock:(void (^)(BOOL deactivated, NSString *deactivateMessage))completionBlock;
 
 - (void)setApiKey:(NSString *)apiKey;
 - (void)setVendorId:(NSString *)vendorId;
@@ -100,6 +110,9 @@
 - (void)disableTrialResetOnDeactivate;
 - (void)resetTrialOnVersionUpdateForMajorOnly:(BOOL)onlyMajor;
 - (void)overridePrice:(NSString *)price;
+- (void)overridePrice:(NSString *)price withWindow:(NSWindow *)window completionBlock:(void (^)(NSString *email, NSString *licenceCode, BOOL activate))completionBlock;
+- (void)overridePriceExternal:(NSString *)price;
+
 - (void)setPassthrough:(NSString *)passthrough;
 
 
