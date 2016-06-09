@@ -1,3 +1,9 @@
+# 3.0.1
+Bugfixes:
+- Fixed text alignment in buttons
+- Corrected listed version in header
+- Fixed purchase view crash on multiple loads
+
 # 3.0.0
 Features:
 - Remote verification
