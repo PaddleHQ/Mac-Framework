@@ -1,3 +1,7 @@
+# 3.0.2
+Bugfixes:
+- Fix for licenses being incorrectly removed when original activation was performed using the v1 API
+
 # 3.0.1
 Bugfixes:
 - Fixed text alignment in buttons
