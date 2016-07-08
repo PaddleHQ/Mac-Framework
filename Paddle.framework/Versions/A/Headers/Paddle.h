@@ -4,7 +4,7 @@
 //
 //  Created by Louis Harwood on 10/05/2013.
 //  Copyright (c) 2016 Paddle. All rights reserved.
-//  Version: 3.0.2
+//  Version: 3.0.3
 
 #define kPADProductName @"name"
 #define kPADOnSale @"on_sale"
@@ -17,6 +17,9 @@
 #define kPADImage @"image"
 #define kPADTrialDuration @"duration"
 #define kPADProductImage @"default_image"
+#define kPADLicence @"PaddleL"
+#define kPADEmail @"PaddleEmail"
+#define kPADFirstLaunchDate @"first_launch_date"
 
 #define kPADActivated @"Activated"
 #define kPADContinue @"Continue"
@@ -35,6 +38,7 @@
 - (void)productDataReceived;
 - (BOOL)shouldDestroyLicenceOnVerificationFail;
 - (int)failedAttemptsBeforeLicenceDestruction;
+- (NSString *)appGroupForSharedLicense;
 @end
 
 @class PADProductWindowController;
@@ -110,8 +114,11 @@
 - (void)disableTrialResetOnDeactivate;
 - (void)resetTrialOnVersionUpdateForMajorOnly:(BOOL)onlyMajor;
 - (void)overridePrice:(NSString *)price;
+- (void)overridePrice:(NSString *)price withCustomMessage:(NSString *)customMessage customProductName:(NSString *)productName;
 - (void)overridePrice:(NSString *)price withWindow:(NSWindow *)window completionBlock:(void (^)(NSString *email, NSString *licenceCode, BOOL activate))completionBlock;
+- (void)overridePrice:(NSString *)price withWindow:(NSWindow *)window customMessage:(NSString *)customMessage customProductName:(NSString *)productName completionBlock:(void (^)(NSString *email, NSString *licenceCode, BOOL activate))completionBlock;
 - (void)overridePriceExternal:(NSString *)price;
+- (NSDictionary *)existingLicenseFromAppGroup:(NSString *)appGroup forProductId:(NSString *)productId;
 
 - (void)setPassthrough:(NSString *)passthrough;
 

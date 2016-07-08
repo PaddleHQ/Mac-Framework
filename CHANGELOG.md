@@ -1,3 +1,12 @@
+# 3.0.3
+Bugfixes:
+- Reset failed attempts on successful verification or activation
+- If licence activated delegate is implemented don't also show alert
+
+Features:
+- Upgrade pricing from different app using app groups
+- Customise product and subtext on price override
+
 # 3.0.2
 Bugfixes:
 - Fix for licenses being incorrectly removed when original activation was performed using the v1 API
