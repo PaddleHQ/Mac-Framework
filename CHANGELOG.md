@@ -1,3 +1,12 @@
+# 3.0.4
+Bugfixes:
+- Allow showing activate window and attach to window
+- Improved tool scheduling
+- Product activated delegate fix to not show alert
+
+Features:
+- Improved security on app group license publishing
+
 # 3.0.3
 Bugfixes:
 - Reset failed attempts on successful verification or activation

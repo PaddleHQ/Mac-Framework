@@ -4,7 +4,7 @@
 //
 //  Created by Louis Harwood on 10/05/2013.
 //  Copyright (c) 2016 Paddle. All rights reserved.
-//  Version: 3.0.3
+//  Version: 3.0.4
 
 #define kPADProductName @"name"
 #define kPADOnSale @"on_sale"
@@ -98,6 +98,7 @@
 - (NSString *)activatedLicenceCode;
 - (NSString *)activatedEmail;
 - (void)showActivateLicence;
+- (void)showActivateLicenceWithWindow:(NSWindow *)window;
 - (void)activateLicence:(NSString *)licenceCode email:(NSString *)email withCompletionBlock:(void (^)(BOOL activated, NSError *error))completionBlock;
 - (void)verifyLicenceWithCompletionBlock:(void (^)(BOOL verified, NSError *error))completionBlock;
 
