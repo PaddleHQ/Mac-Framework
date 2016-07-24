@@ -11,7 +11,7 @@
 @protocol PADProductDelegate <NSObject>
 
 - (void)productInfoReceived;
-- (void)productInfoError:(NSString *)errorCode withMessage:(NSString *)errorMessage;
+- (void)productInfoError:(nonnull NSString *)errorCode withMessage:(nullable NSString *)errorMessage;
 
 @end
 
@@ -19,8 +19,8 @@
     NSMutableData *receivedData;
 }
 
-@property (assign) id delegate;
+@property (nullable, assign) id delegate;
 
-- (void)productInfo:(NSString *)productId apiKey:(NSString *)apiKey vendorId:(NSString *)vendorId;
+- (void)productInfo:(nonnull NSString *)productId apiKey:(nonnull NSString *)apiKey vendorId:(nonnull NSString *)vendorId;
 
 @end

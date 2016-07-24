@@ -10,8 +10,8 @@
 
 @protocol PSKReceiptDelegate <NSObject>
 
-- (void)verificationSuccess:(id)receipt;
-- (void)verificationFail:(id)receipt;
+- (void)verificationSuccess:(nonnull id)receipt;
+- (void)verificationFail:(nonnull id)receipt;
 
 @end
 
@@ -25,15 +25,15 @@
     NSString *userEmail;
 }
 
-@property (assign) id <PSKReceiptDelegate> delegate;
-@property (nonatomic, retain) NSMutableData *receivedData;
+@property (nullable, assign) id <PSKReceiptDelegate> delegate;
+@property (nullable, nonatomic, retain) NSMutableData *receivedData;
 
-@property (copy) NSString *productId;
-@property (copy) NSString *token;
-@property (copy) NSString *userId;
-@property (copy) NSString *receiptId;
-@property (nonatomic, retain) NSDate *lastActivated;
-@property (copy) NSString *userEmail;
+@property (nonnull, copy) NSString *productId;
+@property (nullable, copy) NSString *token;
+@property (nullable, copy) NSString *userId;
+@property (nonnull, copy) NSString *receiptId;
+@property (nullable, nonatomic, retain) NSDate *lastActivated;
+@property (nullable, copy) NSString *userEmail;
 
 - (void)verify;
 - (void)store;

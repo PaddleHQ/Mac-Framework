@@ -15,7 +15,7 @@
 @class PTKThanks;
 
 @protocol PaddleToolkitDelegate <NSObject>
-- (void)PTKToolSubmitted:(NSString *)tool withValue:(id)value;
+- (void)PTKToolSubmitted:(nonnull NSString *)tool withValue:(nullable id)value;
 @end
 
 @interface PaddleToolKit : NSObject {
@@ -26,19 +26,19 @@
     PTKThanks *thanksView;
 }
 
-@property (assign) id delegate;
-@property (nonatomic, strong) PTKHappiness *happinessView;
-@property (nonatomic, strong) PTKRate *rateView;
-@property (nonatomic, strong) PTKFeedback *feedbackView;
-@property (nonatomic, strong) PTKEmail *emailView;
-@property (nonatomic, strong) PTKThanks *thanksView;
+@property (nullable, assign) id delegate;
+@property (nullable, nonatomic, strong) PTKHappiness *happinessView;
+@property (nullable, nonatomic, strong) PTKRate *rateView;
+@property (nullable, nonatomic, strong) PTKFeedback *feedbackView;
+@property (nullable, nonatomic, strong) PTKEmail *emailView;
+@property (nullable, nonatomic, strong) PTKThanks *thanksView;
 
-+ (PaddleToolKit *)sharedInstance;
-- (void)presentHappinessViewWithSchedule:(NSString *)schedule message:(NSString *)message;
-- (void)presentEmailSubscribePromptWithSchedule:(NSString *)schedule message:(NSString *)message;
-- (void)presentFeedbackViewWithSchedule:(NSString *)schedule message:(NSString *)message label:(NSString *)label;
-- (void)presentRatingViewWithSchedule:(NSString *)schedule message:(NSString *)message;
++ (nonnull PaddleToolKit *)sharedInstance;
+- (void)presentHappinessViewWithSchedule:(nullable NSString *)schedule message:(nullable NSString *)message;
+- (void)presentEmailSubscribePromptWithSchedule:(nullable NSString *)schedule message:(nullable NSString *)message;
+- (void)presentFeedbackViewWithSchedule:(nullable NSString *)schedule message:(nullable NSString *)message label:(nullable NSString *)label;
+- (void)presentRatingViewWithSchedule:(nullable NSString *)schedule message:(nullable NSString *)message;
 
-- (void)presentAppStoreRatingWithSchedule:(NSString *)schedule appId:(NSString *)appId;
+- (void)presentAppStoreRatingWithSchedule:(nullable NSString *)schedule appId:(nonnull NSString *)appId;
 
 @end

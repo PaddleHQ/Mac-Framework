@@ -17,12 +17,12 @@ typedef enum productTypes
 
 @protocol PaddleStoreKitDelegate <NSObject>
 
-- (void)PSKProductPurchased:(PSKReceipt *)transactionReceipt;
-- (void)PSKDidFailWithError:(NSError *)error;
+- (void)PSKProductPurchased:(nonnull PSKReceipt *)transactionReceipt;
+- (void)PSKDidFailWithError:(nonnull NSError *)error;
 - (void)PSKDidCancel;
 
 @optional
-- (void)PSKProductsReceived:(NSArray *)products;
+- (void)PSKProductsReceived:(nonnull NSArray *)products;
 
 @end
 
@@ -39,31 +39,31 @@ typedef enum productTypes
     PSKProductController *productController;
 }
 
-@property (assign) id <PaddleStoreKitDelegate> delegate;
-@property (nonatomic, retain) PSKPurchaseWindowController *purchaseWindow;
-@property (nonatomic, retain) PSKStoreWindowController *storeWindow;
-@property (nonatomic, retain) PSKProductWindowController *productWindow;
-@property (nonatomic, retain) PSKProductController *productController;
+@property (nonnull, assign) id <PaddleStoreKitDelegate> delegate;
+@property (nullable, nonatomic, retain) PSKPurchaseWindowController *purchaseWindow;
+@property (nullable, nonatomic, retain) PSKStoreWindowController *storeWindow;
+@property (nullable, nonatomic, retain) PSKProductWindowController *productWindow;
+@property (nullable, nonatomic, retain) PSKProductController *productController;
 
-+ (PaddleStoreKit *)sharedInstance;
++ (nonnull PaddleStoreKit *)sharedInstance;
 
 //Store
 - (void)showStoreView;
 - (void)showStoreViewForProductType:(ProductType)productType;
-- (void)showStoreViewForProductIds:(NSArray *)productIds;
+- (void)showStoreViewForProductIds:(nonnull NSArray *)productIds;
 
 
 //Product
-- (void)showProduct:(NSString *)productId;
+- (void)showProduct:(nonnull NSString *)productId;
 - (void)allProducts;
 
 //Purchase
-- (void)purchaseProduct:(NSString *)productId;
+- (void)purchaseProduct:(nonnull NSString *)productId;
 - (void)recoverPurchases;
 
 //Receipts
-- (NSArray *)validReceipts;
-- (PSKReceipt *)receiptForProductId:(NSString *)productId;
+- (nullable NSArray *)validReceipts;
+- (nullable PSKReceipt *)receiptForProductId:(nonnull NSString *)productId;
 
 
 

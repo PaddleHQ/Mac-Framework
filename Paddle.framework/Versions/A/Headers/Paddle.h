@@ -4,7 +4,7 @@
 //
 //  Created by Louis Harwood on 10/05/2013.
 //  Copyright (c) 2016 Paddle. All rights reserved.
-//  Version: 3.0.4
+//  Version: 3.0.5
 
 #define kPADProductName @"name"
 #define kPADOnSale @"on_sale"
@@ -32,13 +32,13 @@
 
 @optional
 - (void)licenceActivated;
-- (void)licenceDeactivated:(BOOL)deactivated message:(NSString *)deactivateMessage;
-- (void)paddleDidFailWithError:(NSError *)error;
+- (void)licenceDeactivated:(BOOL)deactivated message:(nullable NSString *)deactivateMessage;
+- (void)paddleDidFailWithError:(nullable NSError *)error;
 - (BOOL)willShowBuyWindow;
 - (void)productDataReceived;
 - (BOOL)shouldDestroyLicenceOnVerificationFail;
 - (int)failedAttemptsBeforeLicenceDestruction;
-- (NSString *)appGroupForSharedLicense;
+- (nonnull NSString *)appGroupForSharedLicense;
 @end
 
 @class PADProductWindowController;
@@ -66,12 +66,12 @@
     #endif
 }
 
-@property (assign) id <PaddleDelegate> delegate;
+@property (nullable, assign) id <PaddleDelegate> delegate;
 
-@property (nonatomic, retain) PADProductWindowController *productWindow;
-@property (nonatomic, retain) PADActivateWindowController *activateWindow;
-@property (nonatomic, retain) PADBuyWindowController *buyWindow;
-@property (nonatomic, retain) NSWindow *devMainWindow;
+@property (nullable, nonatomic, retain) PADProductWindowController *productWindow;
+@property (nullable, nonatomic, retain) PADActivateWindowController *activateWindow;
+@property (nullable, nonatomic, retain) PADBuyWindowController *buyWindow;
+@property (nullable, nonatomic, retain) NSWindow *devMainWindow;
 
 @property (assign) BOOL isTimeTrial;
 @property (assign) BOOL isOpen;
@@ -84,44 +84,44 @@
 @property (assign) BOOL isSiteLicensed;
 
 
-+ (Paddle *)sharedInstance;
-- (void)startLicensing:(NSDictionary *)productInfo timeTrial:(BOOL)timeTrial withWindow:(NSWindow *)mainWindow;
-- (void)startLicensingSilently:(NSDictionary *)productInfo timeTrial:(BOOL)timeTrial;
++ (nonnull Paddle *)sharedInstance;
+- (void)startLicensing:(nonnull NSDictionary *)productInfo timeTrial:(BOOL)timeTrial withWindow:(nullable NSWindow *)mainWindow;
+- (void)startLicensingSilently:(nonnull NSDictionary *)productInfo timeTrial:(BOOL)timeTrial;
 - (void)startPurchase;
-- (void)startPurchaseWithWindow:(NSWindow *)window completionBlock:(void (^)(NSString *email, NSString *licenceCode, BOOL activate))completionBlock;
+- (void)startPurchaseWithWindow:(nonnull NSWindow *)window completionBlock:(nullable void (^)( NSString * _Nullable email,  NSString * _Nullable licenceCode, BOOL activate))completionBlock;
 - (void)startExternalPurchase;
-- (void)purchaseProductId:(NSString *)productId withWindow:(NSWindow *)window completionBlock:(void (^)(NSString *response, NSString *email, BOOL completed, NSError *error))completionBlock;
+- (void)purchaseProductId:(nonnull NSString *)productId withWindow:(nullable NSWindow *)window completionBlock:(nonnull void (^)(NSString * _Nullable response, NSString * _Nullable email, BOOL completed, NSError * _Nullable error))completionBlock;
 
-- (NSNumber *)daysRemainingOnTrial;
+- (nonnull NSNumber *)daysRemainingOnTrial;
 - (BOOL)productActivated;
 - (void)showLicencing;
-- (NSString *)activatedLicenceCode;
-- (NSString *)activatedEmail;
+- (nullable NSString *)activatedLicenceCode;
+- (nullable NSString *)activatedEmail;
 - (void)showActivateLicence;
-- (void)showActivateLicenceWithWindow:(NSWindow *)window;
-- (void)activateLicence:(NSString *)licenceCode email:(NSString *)email withCompletionBlock:(void (^)(BOOL activated, NSError *error))completionBlock;
-- (void)verifyLicenceWithCompletionBlock:(void (^)(BOOL verified, NSError *error))completionBlock;
+- (void)showActivateLicenceWithWindow:(nullable NSWindow *)window;
+- (void)activateLicence:(nonnull NSString *)licenceCode email:(nonnull NSString *)email withCompletionBlock:(nonnull void (^)(BOOL activated, NSError * _Nonnull error))completionBlock;
+- (void)verifyLicenceWithCompletionBlock:(nonnull void (^)(BOOL verified, NSError * _Nullable error))completionBlock;
 
 - (void)deactivateLicence;
-- (void)deactivateLicenceWithCompletionBlock:(void (^)(BOOL deactivated, NSString *deactivateMessage))completionBlock;
+- (void)deactivateLicenceWithCompletionBlock:(nonnull void (^)(BOOL deactivated, NSString * _Nullable deactivateMessage))completionBlock;
 
-- (void)setApiKey:(NSString *)apiKey;
-- (void)setVendorId:(NSString *)vendorId;
-- (void)setProductId:(NSString *)productId;
+- (void)setApiKey:(nonnull NSString *)apiKey;
+- (void)setVendorId:(nonnull NSString *)vendorId;
+- (void)setProductId:(nonnull NSString *)productId;
 
-- (void)setCustomProductHeading:(NSString *)productHeading;
+- (void)setCustomProductHeading:(nonnull NSString *)productHeading;
 - (void)disableTrial:(BOOL)trialSetting;
 - (void)disableLicenseMigration;
 - (void)disableTrialResetOnDeactivate;
 - (void)resetTrialOnVersionUpdateForMajorOnly:(BOOL)onlyMajor;
-- (void)overridePrice:(NSString *)price;
-- (void)overridePrice:(NSString *)price withCustomMessage:(NSString *)customMessage customProductName:(NSString *)productName;
-- (void)overridePrice:(NSString *)price withWindow:(NSWindow *)window completionBlock:(void (^)(NSString *email, NSString *licenceCode, BOOL activate))completionBlock;
-- (void)overridePrice:(NSString *)price withWindow:(NSWindow *)window customMessage:(NSString *)customMessage customProductName:(NSString *)productName completionBlock:(void (^)(NSString *email, NSString *licenceCode, BOOL activate))completionBlock;
-- (void)overridePriceExternal:(NSString *)price;
-- (NSDictionary *)existingLicenseFromAppGroup:(NSString *)appGroup forProductId:(NSString *)productId;
+- (void)overridePrice:(nonnull NSString *)price;
+- (void)overridePrice:(nonnull NSString *)price withCustomMessage:(nullable NSString *)customMessage customProductName:(nullable NSString *)productName;
+- (void)overridePrice:(nonnull NSString *)price withWindow:(nullable NSWindow *)window completionBlock:(nonnull void (^)(NSString * _Nullable email, NSString * _Nullable licenceCode, BOOL activate))completionBlock;
+- (void)overridePrice:(nonnull NSString *)price withWindow:(nullable NSWindow *)window customMessage:(nullable NSString *)customMessage customProductName:(nullable NSString *)productName completionBlock:(nonnull void (^)(NSString * _Nullable email, NSString * _Nullable licenceCode, BOOL activate))completionBlock;
+- (void)overridePriceExternal:(nonnull NSString *)price;
+- (nullable NSDictionary *)existingLicenseFromAppGroup:(nonnull NSString *)appGroup forProductId:(nonnull NSString *)productId;
 
-- (void)setPassthrough:(NSString *)passthrough;
+- (void)setPassthrough:(nonnull NSString *)passthrough;
 
 
 @end

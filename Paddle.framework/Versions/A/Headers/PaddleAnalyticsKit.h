@@ -19,9 +19,9 @@ typedef enum appStores
 @interface PaddleAnalyticsKit : NSObject
 
 + (void)startTracking;
-+ (void)track:(NSString *)action properties:(NSDictionary *)properties;
-+ (void)identify:(NSString *)identifier;
-+ (void)payment:(NSNumber *)amount currency:(NSString *)currency product:(NSString *)product store:(Store)store;
++ (void)track:(nonnull NSString *)action properties:(nullable NSDictionary *)properties;
++ (void)identify:(nonnull NSString *)identifier;
++ (void)payment:(nonnull NSNumber *)amount currency:(nonnull NSString *)currency product:(nonnull NSString *)product store:(Store)store;
 
 + (void)disableTracking;
 + (void)enableTracking;

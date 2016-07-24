@@ -18,12 +18,12 @@
     NSString *icon;
 }
 
-@property (copy) NSString *productId;
-@property (copy) NSString *name;
-@property (copy) NSString *currency;
-@property (copy) NSString *price;
-@property (copy) NSString *type;
-@property (copy) NSString *productDescription;
-@property (copy) NSString *icon;
+@property (nonnull, copy) NSString *productId;
+@property (nonnull, copy) NSString *name;
+@property (nonnull, copy) NSString *currency;
+@property (nonnull, copy) NSString *price;
+@property (nullable, copy) NSString *type;
+@property (nullable, copy) NSString *productDescription;
+@property (nullable, copy) NSString *icon;
 
 @end

@@ -1,3 +1,8 @@
+# 3.0.5
+Features
+- Framework exposes module for better Swift support
+- Nullability annotation added
+
 # 3.0.4
 Bugfixes:
 - Allow showing activate window and attach to window
