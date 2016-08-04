@@ -4,7 +4,7 @@
 //
 //  Created by Louis Harwood on 10/05/2013.
 //  Copyright (c) 2016 Paddle. All rights reserved.
-//  Version: 3.0.5
+//  Version: 3.0.6
 
 #define kPADProductName @"name"
 #define kPADOnSale @"on_sale"
@@ -85,8 +85,8 @@
 
 
 + (nonnull Paddle *)sharedInstance;
-- (void)startLicensing:(nonnull NSDictionary *)productInfo timeTrial:(BOOL)timeTrial withWindow:(nullable NSWindow *)mainWindow;
-- (void)startLicensingSilently:(nonnull NSDictionary *)productInfo timeTrial:(BOOL)timeTrial;
+- (void)startLicensing:(nonnull NSDictionary<NSString *, NSString *> *)productInfo timeTrial:(BOOL)timeTrial withWindow:(nullable NSWindow *)mainWindow;
+- (void)startLicensingSilently:(nonnull NSDictionary<NSString *, NSString *>  *)productInfo timeTrial:(BOOL)timeTrial;
 - (void)startPurchase;
 - (void)startPurchaseWithWindow:(nonnull NSWindow *)window completionBlock:(nullable void (^)( NSString * _Nullable email,  NSString * _Nullable licenceCode, BOOL activate))completionBlock;
 - (void)startExternalPurchase;

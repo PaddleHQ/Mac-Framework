@@ -1,5 +1,10 @@
+# 3.0.6
+Bugfixes:
+- Fixed crash on checkout when using Paypal
+- Improved checking of correct values in productInfo NSDictionary
+
 # 3.0.5
-Features
+Features:
 - Framework exposes module for better Swift support
 - Nullability annotation added
 
