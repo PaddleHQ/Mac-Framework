@@ -1,3 +1,7 @@
+# 3.0.7
+Bugfixes:
+- Switched to @rpath for Installation Directory
+
 # 3.0.6
 Bugfixes:
 - Fixed crash on checkout when using Paypal
