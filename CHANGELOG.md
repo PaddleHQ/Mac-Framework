@@ -1,3 +1,8 @@
+# 3.0.8
+Features:
+- ShowActivateLicence with completionBlock for use with silent licensing but using Paddle UI for activation
+- Improved handling of completion blocks in silent licensing
+
 # 3.0.7
 Bugfixes:
 - Switched to @rpath for Installation Directory
