@@ -1,3 +1,10 @@
+# 3.0.9
+Features
+- Added `onlyDestroyLicenceOnVerificationFail` delegate for verification
+
+Bugfixes
+- Prevented displaying a sheet when one is already attached
+
 # 3.0.8
 Features:
 - ShowActivateLicence with completionBlock for use with silent licensing but using Paddle UI for activation

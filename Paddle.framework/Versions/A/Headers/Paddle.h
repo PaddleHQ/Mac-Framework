@@ -4,7 +4,7 @@
 //
 //  Created by Louis Harwood on 10/05/2013.
 //  Copyright (c) 2016 Paddle. All rights reserved.
-//  Version: 3.0.8
+//  Version: 3.0.9
 
 #define kPADProductName @"name"
 #define kPADOnSale @"on_sale"
@@ -38,6 +38,7 @@
 - (void)productDataReceived;
 - (BOOL)shouldDestroyLicenceOnVerificationFail;
 - (int)failedAttemptsBeforeLicenceDestruction;
+- (BOOL)onlyDestroyLicenceOnVerificationFail;
 - (nonnull NSString *)appGroupForSharedLicense;
 @end
 
