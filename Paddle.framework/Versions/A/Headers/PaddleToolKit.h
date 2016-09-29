@@ -34,11 +34,11 @@
 @property (nullable, nonatomic, strong) PTKThanks *thanksView;
 
 + (nonnull PaddleToolKit *)sharedInstance;
-- (void)presentHappinessViewWithSchedule:(nullable NSString *)schedule message:(nullable NSString *)message;
+- (void)presentHappinessViewWithSchedule:(nullable NSString *)schedule message:(nullable NSString *)message __deprecated;
 - (void)presentEmailSubscribePromptWithSchedule:(nullable NSString *)schedule message:(nullable NSString *)message;
 - (void)presentFeedbackViewWithSchedule:(nullable NSString *)schedule message:(nullable NSString *)message label:(nullable NSString *)label;
-- (void)presentRatingViewWithSchedule:(nullable NSString *)schedule message:(nullable NSString *)message;
+- (void)presentRatingViewWithSchedule:(nullable NSString *)schedule message:(nullable NSString *)message __deprecated;
 
-- (void)presentAppStoreRatingWithSchedule:(nullable NSString *)schedule appId:(nonnull NSString *)appId;
+- (void)presentAppStoreRatingWithSchedule:(nullable NSString *)schedule appId:(nonnull NSString *)appId __deprecated;
 
 @end

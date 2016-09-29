@@ -1,3 +1,12 @@
+# 3.0.10
+Features:
+- Improved checkout process to allow for more product types
+- Added ability to pre-fill coupon(s) for multiple products
+
+Bugfixes:
+- Fixed scenario where onlyDestroyLicenceOnVerificationFail produced a false positive
+- Deprecated Happiness and Ratings methods in PTK
+
 # 3.0.9
 Features
 - Added `onlyDestroyLicenceOnVerificationFail` delegate for verification

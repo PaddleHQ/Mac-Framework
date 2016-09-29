@@ -20,6 +20,8 @@
 #define kPADLicence @"PaddleL"
 #define kPADEmail @"PaddleEmail"
 #define kPADFirstLaunchDate @"first_launch_date"
+#define kPADCouponProduct @"productId"
+#define kPADCouponCode @"couponCode"
 
 #define kPADActivated @"Activated"
 #define kPADContinue @"Continue"
@@ -124,6 +126,8 @@
 - (nullable NSDictionary *)existingLicenseFromAppGroup:(nonnull NSString *)appGroup forProductId:(nonnull NSString *)productId;
 
 - (void)setPassthrough:(nonnull NSString *)passthrough;
+- (void)addCoupon:(nonnull NSString *)couponCode forProductId:(nullable NSString *)productId;
+- (void)addCoupons:(nonnull NSArray *)coupons;
 
 
 @end
