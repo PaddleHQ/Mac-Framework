@@ -1,3 +1,8 @@
+# 3.0.11
+Bugfixes:
+- Fixed checkout issue for guest users
+- Fixed issue resetting trials during development
+
 # 3.0.10
 Features:
 - Improved checkout process to allow for more product types
