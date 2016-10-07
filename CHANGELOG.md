@@ -1,3 +1,11 @@
+# 3.0.12
+Features:
+- Added ability to set checkout attributes for PaddleJS
+
+Bugfixes:
+- Fixed issue when app version isn't using semantic versioning resulting in checkout not loading
+- Fixed silent licensing crashing when framework attempted to display product info
+
 # 3.0.11
 Bugfixes:
 - Fixed checkout issue for guest users

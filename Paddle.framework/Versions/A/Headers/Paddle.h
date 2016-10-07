@@ -27,6 +27,14 @@
 #define kPADContinue @"Continue"
 #define kPADTrialExpired @"TrialExpired"
 
+#define kPADCheckoutEmail @"email"
+#define kPADCheckoutCountry @"country"
+#define kPADCheckoutZip @"postcode"
+#define kPADCheckoutQuantity @"quantity"
+#define kPADCheckoutAllowQuantity @"allowQuantity"
+#define kPADCheckoutReferrer @"referrer"
+#define kPADCheckoutDisableLogout @"disableLogout"
+
 #import <Foundation/Foundation.h>
 #import <Cocoa/Cocoa.h>
 
@@ -89,7 +97,7 @@
 
 + (nonnull Paddle *)sharedInstance;
 - (void)startLicensing:(nonnull NSDictionary<NSString *, NSString *> *)productInfo timeTrial:(BOOL)timeTrial withWindow:(nullable NSWindow *)mainWindow;
-- (void)startLicensingSilently:(nonnull NSDictionary<NSString *, NSString *>  *)productInfo timeTrial:(BOOL)timeTrial;
+- (void)startLicensingSilently:(nonnull NSDictionary<NSString *, NSString *> *)productInfo timeTrial:(BOOL)timeTrial;
 - (void)startPurchase;
 - (void)startPurchaseWithWindow:(nonnull NSWindow *)window completionBlock:(nullable void (^)( NSString * _Nullable email,  NSString * _Nullable licenceCode, BOOL activate))completionBlock;
 - (void)startExternalPurchase;
@@ -128,6 +136,7 @@
 - (void)setPassthrough:(nonnull NSString *)passthrough;
 - (void)addCoupon:(nonnull NSString *)couponCode forProductId:(nullable NSString *)productId;
 - (void)addCoupons:(nonnull NSArray *)coupons;
+- (void)setCustomCheckoutAttributes:(nonnull NSDictionary<NSString *, id> *)checkoutAttributes;
 
 
 @end
