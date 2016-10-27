@@ -1,3 +1,9 @@
+# 3.0.13
+Bugfixes:
+- Fix zero days remaining issue
+- Fixed schedules in PTK being ignored
+- Increased width of licence code input to fit standard length
+
 # 3.0.12
 Features:
 - Added ability to set checkout attributes for PaddleJS
