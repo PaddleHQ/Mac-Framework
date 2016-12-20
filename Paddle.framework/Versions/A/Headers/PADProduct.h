@@ -17,9 +17,11 @@
 
 @interface PADProduct : NSObject <NSURLConnectionDelegate> {
     NSMutableData *receivedData;
+    NSString *aProductId;
 }
 
 @property (nullable, assign) id delegate;
+@property (nullable, copy) NSString *aProductId;
 
 - (void)productInfo:(nonnull NSString *)productId apiKey:(nonnull NSString *)apiKey vendorId:(nonnull NSString *)vendorId;
 

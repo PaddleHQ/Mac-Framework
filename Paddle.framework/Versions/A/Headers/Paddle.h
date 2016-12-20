@@ -38,6 +38,12 @@
 #import <Foundation/Foundation.h>
 #import <Cocoa/Cocoa.h>
 
+typedef enum licenseTypes
+{
+    PADActivationLicense,
+    PADFeatureLicense
+} LicenseType;
+
 @protocol PaddleDelegate <NSObject>
 
 @optional
@@ -95,31 +101,55 @@
 @property (assign) BOOL isSiteLicensed;
 
 
+
 + (nonnull Paddle *)sharedInstance;
+
+- (void)setApiKey:(nonnull NSString *)apiKey;
+- (void)setVendorId:(nonnull NSString *)vendorId;
+- (void)setProductId:(nonnull NSString *)productId;
+
 - (void)startLicensing:(nonnull NSDictionary<NSString *, NSString *> *)productInfo timeTrial:(BOOL)timeTrial withWindow:(nullable NSWindow *)mainWindow;
 - (void)startLicensingSilently:(nonnull NSDictionary<NSString *, NSString *> *)productInfo timeTrial:(BOOL)timeTrial;
+
+// Start a purchase for default activation license
 - (void)startPurchase;
+// Start a purchase for a product
+- (void)startPurchaseForProduct:(nonnull NSString *)productId;
+
 - (void)startPurchaseWithWindow:(nonnull NSWindow *)window completionBlock:(nullable void (^)( NSString * _Nullable email,  NSString * _Nullable licenceCode, BOOL activate))completionBlock;
 - (void)startExternalPurchase;
 - (void)purchaseProductId:(nonnull NSString *)productId withWindow:(nullable NSWindow *)window completionBlock:(nonnull void (^)(NSString * _Nullable response, NSString * _Nullable email, BOOL completed, NSError * _Nullable error))completionBlock;
 
+- (void)startFeatureTrial:(nonnull NSString *)productId productInfo:(nonnull NSDictionary<NSString *, NSString *> *)productInfo timeTrial:(BOOL)timeTrial;
+
 - (nonnull NSNumber *)daysRemainingOnTrial;
+- (nonnull NSNumber *)daysRemainingOnTrialForProductId:(nonnull NSString *)productId;
+
 - (BOOL)productActivated;
+// Will check activation status for any product
+- (BOOL)productActivated:(nonnull NSString *)productId;
+
 - (void)showLicencing;
 - (nullable NSString *)activatedLicenceCode;
 - (nullable NSString *)activatedEmail;
 - (void)showActivateLicence;
 - (void)showActivateLicenceWithWindow:(nullable NSWindow *)window;
+- (void)showActivateLicenceWithWindow:(nullable NSWindow *)window forProductId:(nonnull NSString *)productId;
 - (void)showActivateLicenceWithWindow:(nullable NSWindow *)window licenceCode:(nullable NSString *)licenceCode email:(nullable NSString *)email withCompletionBlock:(nonnull void(^)(BOOL activated))completionBlock;
-- (void)activateLicence:(nonnull NSString *)licenceCode email:(nonnull NSString *)email withCompletionBlock:(nonnull void (^)(BOOL activated, NSError * _Nonnull error))completionBlock;
+
+// Activate license for default activation license
+- (void)activateLicence:(nonnull NSString *)licenceCode email:(nonnull NSString *)email withCompletionBlock:(nonnull void (^)(BOOL activated,  NSError * _Nullable error))completionBlock;
+// Activate license for a product
+- (void)activateLicence:(nonnull NSString *)licenceCode email:(nonnull NSString *)email withCompletionBlock:(nonnull void (^)(BOOL activated, NSError * _Nullable error))completionBlock forProductId:(nonnull NSString *)productId;
+
+// Verify license for default activation license
 - (void)verifyLicenceWithCompletionBlock:(nonnull void (^)(BOOL verified, NSError * _Nullable error))completionBlock;
+// Verify license for a product
+- (void)verifyLicenceWithCompletionBlock:(nonnull void (^)(BOOL verified, NSError * _Nullable error))completionBlock forProductId:(nonnull NSString *)productId;
 
 - (void)deactivateLicence;
+- (void)deactivateLicenceForProductId:(nonnull NSString *)productId;
 - (void)deactivateLicenceWithCompletionBlock:(nonnull void (^)(BOOL deactivated, NSString * _Nullable deactivateMessage))completionBlock;
-
-- (void)setApiKey:(nonnull NSString *)apiKey;
-- (void)setVendorId:(nonnull NSString *)vendorId;
-- (void)setProductId:(nonnull NSString *)productId;
 
 - (void)setCustomProductHeading:(nonnull NSString *)productHeading;
 - (void)disableTrial:(BOOL)trialSetting;
@@ -137,6 +167,8 @@
 - (void)addCoupon:(nonnull NSString *)couponCode forProductId:(nullable NSString *)productId;
 - (void)addCoupons:(nonnull NSArray *)coupons;
 - (void)setCustomCheckoutAttributes:(nonnull NSDictionary<NSString *, id> *)checkoutAttributes;
+
+- (void)forceLoadLicense;
 
 
 @end
