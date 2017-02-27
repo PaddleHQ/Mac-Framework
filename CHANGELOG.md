@@ -1,3 +1,10 @@
+# 3.0.14
+Bugfixes:
+- Improved handling API connections to reduce SSL issues
+- Fixed issue when pasting licence codes
+- Resolved issue where some trials did not decrement correctly
+- Fixed productActivated responses sometimes being incorrect
+
 # 3.0.13
 Bugfixes:
 - Fix zero days remaining issue

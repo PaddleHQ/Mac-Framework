@@ -20,6 +20,7 @@ typedef enum appStores
 
 + (void)startTracking;
 + (void)track:(nonnull NSString *)action properties:(nullable NSDictionary *)properties;
++ (void)trackInstant:(nonnull NSString *)action properties:(nullable NSDictionary *)properties;
 + (void)identify:(nonnull NSString *)identifier;
 + (void)payment:(nonnull NSNumber *)amount currency:(nonnull NSString *)currency product:(nonnull NSString *)product store:(Store)store;
 
