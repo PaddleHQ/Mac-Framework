@@ -1,3 +1,9 @@
+# 3.0.15
+Bugfixes:
+- Fixed crash when attempting to display modal window when one is already present
+- New Delegate method `- (BOOL)willPresentModalForWindow:(NSWindow * _Nullable )window;` called before presenting modal window to allow developers to dismiss an existing modal window
+- Added "Deactivate" button to existing/activated licence view. Enabled setting `willShowDeactivateLicenceButton` to `YES`
+
 # 3.0.14
 Bugfixes:
 - Improved handling API connections to reduce SSL issues

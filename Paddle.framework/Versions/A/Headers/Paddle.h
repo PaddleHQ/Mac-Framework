@@ -45,6 +45,7 @@
 - (void)licenceDeactivated:(BOOL)deactivated message:(nullable NSString *)deactivateMessage;
 - (void)paddleDidFailWithError:(nullable NSError *)error;
 - (BOOL)willShowBuyWindow;
+- (BOOL)willPresentModalForWindow:(NSWindow * _Nullable )window;
 - (void)productDataReceived;
 - (BOOL)shouldDestroyLicenceOnVerificationFail;
 - (int)failedAttemptsBeforeLicenceDestruction;
@@ -70,6 +71,7 @@
     BOOL willSimplifyViews;
     BOOL willShowActivationAlert;
     BOOL willContinueAtTrialEnd;
+    BOOL willShowDeactivateLicenceButton;
     BOOL isSiteLicensed;
     
     #if !__has_feature(objc_arc)
@@ -92,6 +94,7 @@
 @property (assign) BOOL willSimplifyViews;
 @property (assign) BOOL willShowActivationAlert;
 @property (assign) BOOL willContinueAtTrialEnd;
+@property (assign) BOOL willShowDeactivateLicenceButton;
 @property (assign) BOOL isSiteLicensed;
 
 
