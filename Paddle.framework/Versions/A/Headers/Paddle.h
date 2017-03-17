@@ -125,6 +125,7 @@
 - (void)setProductId:(nonnull NSString *)productId;
 
 - (void)setCustomProductHeading:(nonnull NSString *)productHeading;
+- (void)setCustomProductTrialText:(nonnull NSString *)productTrialText;
 - (void)disableTrial:(BOOL)trialSetting;
 - (void)disableLicenseMigration;
 - (void)disableTrialResetOnDeactivate;

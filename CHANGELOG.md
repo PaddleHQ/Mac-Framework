@@ -1,3 +1,14 @@
+# 3.0.16
+Bugfixes:
+- Fixed issue where restore purchases prevented apps from quitting when no internet connection was available
+- Fixed a number of localization issues
+- Resolved PTK Schedules not always being followed
+- Fixed issue where the PTK Feedback tool didn't present acknowledgement
+
+Features:
+- Added 'x event' option to PTK schedules, where 'event' is any analytics event
+- Added ability for product heading and trial text to be localized via `setCustomProduct...` `Heading` or `TrialText`
+
 # 3.0.15
 Bugfixes:
 - Fixed crash when attempting to display modal window when one is already present
