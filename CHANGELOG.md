@@ -1,3 +1,14 @@
+# 3.0.17
+Bugfixes:
+- Fixed issue with product windows sometimes not displaying a show
+- Resolved debug tools not renewing trials
+- Fixed issue where older licences would not always verify correctly
+- Fixed multiline content in PTK Feedback tool
+
+Features:
+- Overridden prices now display in the product window
+- Feedback and Audience methods can be used directly without displaying Paddle UI
+
 # 3.0.16
 Bugfixes:
 - Fixed issue where restore purchases prevented apps from quitting when no internet connection was available

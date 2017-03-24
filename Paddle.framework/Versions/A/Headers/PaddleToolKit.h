@@ -36,7 +36,9 @@
 + (nonnull PaddleToolKit *)sharedInstance;
 - (void)presentHappinessViewWithSchedule:(nullable NSString *)schedule message:(nullable NSString *)message __deprecated;
 - (void)presentEmailSubscribePromptWithSchedule:(nullable NSString *)schedule message:(nullable NSString *)message;
+- (void)sendEmailSubscribe:(nonnull NSString *)email;
 - (void)presentFeedbackViewWithSchedule:(nullable NSString *)schedule message:(nullable NSString *)message label:(nullable NSString *)label;
+- (void)sendFeedback:(nonnull NSString *)feedback name:(nonnull NSString *)name email:(nonnull NSString *)email label:(nullable NSString *)label;
 - (void)presentRatingViewWithSchedule:(nullable NSString *)schedule message:(nullable NSString *)message __deprecated;
 
 - (void)presentAppStoreRatingWithSchedule:(nullable NSString *)schedule appId:(nonnull NSString *)appId __deprecated;
