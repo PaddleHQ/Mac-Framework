@@ -1,3 +1,10 @@
+# 3.0.18
+Bugfixes:
+- Fixed encoding issue on 10.8 when start purchases
+- Re-added XCode 7 compatibility
+- Fixed issue preventing licencing from starting after it had been cancelled
+- Included logging option for debugging purposes
+
 # 3.0.17
 Bugfixes:
 - Fixed issue with product windows sometimes not displaying a show
