@@ -1,3 +1,10 @@
+# 3.0.19
+Bugfixes:
+- Fixed issue where products would sometimes incorrectly display as on sale
+- Fixed issue where payments via PayPal would fire incorrect webview delegate methods
+- Solved issue where trial window would sometimes not be shown as a sheet
+- Solved issue where button text would sometimes be blurry
+
 # 3.0.18
 Bugfixes:
 - Fixed encoding issue on 10.8 when start purchases
