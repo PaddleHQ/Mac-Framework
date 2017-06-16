@@ -1,3 +1,10 @@
+# 3.0.20
+Bugfixes:
+- Preventing custom schemes in purchase views from throwing errors
+- Starting Analytics before licencing resulted in a crash, resolved
+- When no internet connection was present some users were unable to continue a trial or activate
+- Time Trials were sometimes being incorrectly identifed as expired
+
 # 3.0.19
 Bugfixes:
 - Fixed issue where products would sometimes incorrectly display as on sale
