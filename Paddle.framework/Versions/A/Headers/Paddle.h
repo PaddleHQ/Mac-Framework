@@ -173,11 +173,10 @@
 - (void)startLicensing:(nonnull NSDictionary<NSString *, NSString *> *)productInfo timeTrial:(BOOL)timeTrial withWindow:(nullable NSWindow *)mainWindow;
 
 
-/** Starts the Paddle Licensing process. Displays a window to view product information and trial status if there is one.
+/** Starts the Paddle Licensing process without displaying any UI.
  *
  * @param productInfo A dictionary containing product information and trial settings. Used for first run/no internet, data is overwritten with response from Paddle API.
  * @param timeTrial A BOOL to indicate if the licensing process should be started with a time trial or not (feature trial).
- * @param mainWindow An NSWindow the licensing window should be attached as a sheet to if required. Can be nil for licensing to be presented modally.
  */
 - (void)startLicensingSilently:(nonnull NSDictionary<NSString *, NSString *> *)productInfo timeTrial:(BOOL)timeTrial;
 
@@ -317,7 +316,7 @@
  *
  * @param price An NSString containing the desired price in USD.
  * @param customMessage An NSString containing a custom message to be displayed for the overridden price.
- * @param customProductName An NSString containing a custom product name to be displayed for the overridden price.
+ * @param productName An NSString containing a custom product name to be displayed for the overridden price.
  */
 - (void)overridePrice:(nonnull NSString *)price withCustomMessage:(nullable NSString *)customMessage customProductName:(nullable NSString *)productName;
 
@@ -334,7 +333,7 @@
  * @param price An NSString containing the desired price in USD.
  * @param window An NSWindow the purchase window should be attached as a sheet to if required. Can be nil for this to presented modally.
  * @param customMessage An NSString containing a custom message to be displayed for the overridden price.
- * @param customProductName An NSString containing a custom product name to be displayed for the overridden price.
+ * @param productName An NSString containing a custom product name to be displayed for the overridden price.
  * @param completionBlock A block to be called when a purchase has completed, returning the email address used along with the licence code.
  */
 - (void)overridePrice:(nonnull NSString *)price withWindow:(nullable NSWindow *)window customMessage:(nullable NSString *)customMessage customProductName:(nullable NSString *)productName completionBlock:(nonnull void (^)(NSString * _Nullable email, NSString * _Nullable licenceCode, BOOL activate))completionBlock;

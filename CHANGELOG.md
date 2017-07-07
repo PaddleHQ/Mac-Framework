@@ -1,3 +1,9 @@
+# 3.0.21
+Bugfixes:
+- Fixed issue where licences were incorrectly removed after verification when offline
+- Improved documentation/warnings during build
+- Removed conflicting category names for some users preventing licences from being written
+
 # 3.0.20
 Bugfixes:
 - Preventing custom schemes in purchase views from throwing errors
