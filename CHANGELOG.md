@@ -1,3 +1,9 @@
+# 3.0.22
+Bugfixes:
+- Fixed issue on 10.8 where product names could be null
+- Fixed issue when setting certain passthrough values would prevent checkout from closing
+- CompletionBlocks on checkout correctly return checkoutId and other details
+
 # 3.0.21
 Bugfixes:
 - Fixed issue where licences were incorrectly removed after verification when offline

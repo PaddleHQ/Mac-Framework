@@ -189,7 +189,7 @@
  * @param window An NSWindow the purchase window should be attached as a sheet to if required. Can be nil for this to presented modally..
  * @param completionBlock A block to be called when a purchase has completed, returning the email address used along with the licence code.
  */
-- (void)startPurchaseWithWindow:(nonnull NSWindow *)window completionBlock:(nullable void (^)( NSString * _Nullable email,  NSString * _Nullable licenceCode, BOOL activate))completionBlock;
+- (void)startPurchaseWithWindow:(nonnull NSWindow *)window completionBlock:(nullable void (^)( NSString * _Nullable email,  NSString * _Nullable licenceCode, BOOL activate, NSDictionary * _Nullable  checkoutData))completionBlock;
 
 /** Opens the default browser on a purchase page for the product.
  */
@@ -201,7 +201,7 @@
  * @param window An NSWindow the purchase window should be attached as a sheet to if required. Can be nil for this to presented modally..
  * @param completionBlock A block to be called when a purchase has completed, returning the email address used along with the licence code. If the product is a subscription product the response will contain an order ID
  */
-- (void)purchaseProductId:(nonnull NSString *)productId withWindow:(nullable NSWindow *)window completionBlock:(nonnull void (^)(NSString * _Nullable response, NSString * _Nullable email, BOOL completed, NSError * _Nullable error))completionBlock;
+- (void)purchaseProductId:(nonnull NSString *)productId withWindow:(nullable NSWindow *)window completionBlock:(nonnull void (^)(NSString * _Nullable response, NSString * _Nullable email, BOOL completed, NSError * _Nullable error, NSDictionary * _Nullable checkoutData))completionBlock;
 
 /** Returns the number of days remaining on the users trial. Can be a negative number (-20 would indicate the trial ended 20 days ago)
  *
@@ -274,6 +274,14 @@
  */
 - (void)deactivateLicenceWithCompletionBlock:(nonnull void (^)(BOOL deactivated, NSString * _Nullable deactivateMessage))completionBlock;
 
+/** Recover a lost licence
+ *
+ * @param email an NSString containing the original email address used for purchasing the licence (licence codes will be sent to this address)
+ * @param productId an NSString containing the product id of the licence that should be recovered
+ * @param completionBlock a block to to be called when a response from the recoverLicence API has been received, returning a BOOL status to indicate if the recovery was successful
+ */
+- (void)recoverLicencesForEmail:(nullable NSString *)email productId:(nullable NSString *)productId withCompletionBlock:(nullable void (^)(BOOL status, NSString * _Nonnull message))completionBlock;
+
 /** Set the title of the ProductView to a NSString other than the default response fromt the API.
  *
  * @param productHeading An NSString containing the title you would like to be displayed. Can be a Localizable string.
@@ -326,7 +334,7 @@
  * @param window An NSWindow the purchase window should be attached as a sheet to if required. Can be nil for this to presented modally.
  * @param completionBlock A block to be called when a purchase has completed, returning the email address used along with the licence code.
  */
-- (void)overridePrice:(nonnull NSString *)price withWindow:(nullable NSWindow *)window completionBlock:(nonnull void (^)(NSString * _Nullable email, NSString * _Nullable licenceCode, BOOL activate))completionBlock;
+- (void)overridePrice:(nonnull NSString *)price withWindow:(nullable NSWindow *)window completionBlock:(nonnull void (^)(NSString * _Nullable email, NSString * _Nullable licenceCode, BOOL activate, NSDictionary * _Nullable checkoutData))completionBlock;
 
 /** Override the current price of the product and display the PurchaseView. One of the startLicensing methods must be called before using this.
  *
@@ -336,7 +344,7 @@
  * @param productName An NSString containing a custom product name to be displayed for the overridden price.
  * @param completionBlock A block to be called when a purchase has completed, returning the email address used along with the licence code.
  */
-- (void)overridePrice:(nonnull NSString *)price withWindow:(nullable NSWindow *)window customMessage:(nullable NSString *)customMessage customProductName:(nullable NSString *)productName completionBlock:(nonnull void (^)(NSString * _Nullable email, NSString * _Nullable licenceCode, BOOL activate))completionBlock;
+- (void)overridePrice:(nonnull NSString *)price withWindow:(nullable NSWindow *)window customMessage:(nullable NSString *)customMessage customProductName:(nullable NSString *)productName completionBlock:(nonnull void (^)(NSString * _Nullable email, NSString * _Nullable licenceCode, BOOL activate, NSDictionary * _Nullable checkoutData))completionBlock;
 
 /** Override the current price of the product and open a purchase page in the users default browser.
  *
