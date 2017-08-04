@@ -1,3 +1,13 @@
+# 3.0.23
+Features:
+- Added Licence Recovery options
+- Checkout Details are now returned in completion blocks
+
+Bugfixes:
+- Fixed issue where some users would persistently be prompted for PTK tools with schedules
+- Fixed issue where product name would be `(null)` on 10.8 Buy Window
+- Fixed issue preventing the Buy Window from closing when some passthrough values were set
+
 # 3.0.22
 Bugfixes:
 - Fixed issue on 10.8 where product names could be null
