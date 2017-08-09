@@ -1,3 +1,7 @@
+# 3.0.24
+Bugfixes:
+- Fixed issue where email passed to `recoverLicencesForEmail` was ignored
+
 # 3.0.23
 Features:
 - Added Licence Recovery options
