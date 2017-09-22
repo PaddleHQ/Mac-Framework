@@ -1,6 +1,8 @@
 # Paddle Mac SDK
 This is the official Mac SDK for [Paddle](https://www.paddle.com), documentation is available [here](https://www.paddle.com/docs/sdk/mac).
 
+### v3.0.25
+
 *We strongly advise you test this Paddle Framework build thoroughly as we’ve made a significant changes in this release to support 10.13 and Child Products.*
 
 These include:
