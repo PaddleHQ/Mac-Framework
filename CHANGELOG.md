@@ -1,3 +1,15 @@
+# 3.0.25
+- Added: Provisional 10.13 Support
+- Added: PayPal checkout window title now updates based on state from PayPal.
+- Added: Option to disable remote verification for legacy licenses.
+- Added: Closing the checkout window now closes the PayPal window if it’s presented.
+- Fixed: Crash when aborting PayPal fixed
+- Fixed: License unicode edge cases resulting in “lost” licenses.
+- Fixed: Moving to site licensing no-longer invalidates your previous license.
+- Fixed: Webview network calls returning after checkout is closed no-longer crash or show system error alerts.
+- Fixed: Any purchase completion blocks now return all available checkout data.
+- Removed: IAP support in favour of Child Products.
+
 # 3.0.24
 Bugfixes:
 - Fixed issue where email passed to `recoverLicencesForEmail` was ignored

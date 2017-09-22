@@ -33,9 +33,11 @@
 - (void)synchronize;
 - (void)load;
 - (void)setObject:(id)object forKey:(NSString *)key;
-- (void)setHashObject:(id)object forKey:(NSString *)key;
+- (void)setHashObject:(id)object forKey:(NSString *)key withProduct:(NSString *)aProductId;
+- (void)setLicense:(NSString *)license forProduct:(NSString *)aProductId withActivationId:(NSString *)activationId type:(NSString *)type email:(NSString *)email expiry:(NSString *)expiry;
 - (id)objectForKey:(NSString *)key;
-- (id)hashObjectForKey:(NSString *)key isvalid:(BOOL *)valid;
+- (id)hashObjectForKey:(NSString *)key withProduct:(NSString *)aProductId isvalid:(BOOL *)valid;
+- (id)licenseForKey:(NSString *)aProductId isValid:(BOOL *)valid;
 - (void)removeObjectForKey:(NSString *)key;
 - (NSDictionary *)dictionaryForKey:(NSString *)key;
 

@@ -4,7 +4,7 @@
 //
 //  Created by Louis Harwood on 10/05/2013.
 //  Copyright (c) 2016 Paddle. All rights reserved.
-//  Version: 3.0.9
+//  Version: 3.0.20
 
 #define kPADProductName @"name"
 #define kPADOnSale @"on_sale"
@@ -38,11 +38,17 @@
 #import <Foundation/Foundation.h>
 #import <Cocoa/Cocoa.h>
 
+typedef enum licenseTypes
+{
+    PADActivationLicense,
+    PADFeatureLicense
+} LicenseType;
+
 @protocol PaddleDelegate <NSObject>
 
 @optional
 - (void)licenceActivated;
-- (void)licenceDeactivated:(BOOL)deactivated message:(nullable NSString *)deactivateMessage;
+- (void)licenceDeactivated:(BOOL)deactivated message:(nullable NSString *)deactivateMessage productId:(nonnull NSString *)productId;
 - (void)paddleDidFailWithError:(nullable NSError *)error;
 - (BOOL)willShowBuyWindow;
 - (BOOL)willPresentModalForWindow:(NSWindow * _Nullable )window;
@@ -73,7 +79,6 @@
     BOOL willContinueAtTrialEnd;
     BOOL willShowDeactivateLicenceButton;
     BOOL willPromptForEmailToStartTrial;
-    BOOL isSiteLicensed;
     
     #if !__has_feature(objc_arc)
     id <PaddleDelegate> delegate;
@@ -142,6 +147,12 @@
  */
 @property (assign) BOOL isSiteLicensed;
 
+/**
+ Should old licences be automatically remotely verified
+ */
+@property (assign) BOOL shouldAutoVerify;
+
+
 
 + (nonnull Paddle *)sharedInstance;
 
@@ -180,9 +191,14 @@
  */
 - (void)startLicensingSilently:(nonnull NSDictionary<NSString *, NSString *> *)productInfo timeTrial:(BOOL)timeTrial;
 
+
 /** Displays the PurchaseView for your product. One of the startLicensing methods must have been called before this
  */
 - (void)startPurchase;
+
+/** Displays the PurchaseView for a product. One of the startLicensing methods must have been called before this
+ */
+- (void)startPurchaseForChildProduct:(nonnull NSString *)childProductId;
 
 /** Displays the PurchaseView for your product. One of the startLicensing methods must have been called before this
  *
@@ -197,11 +213,20 @@
 
 /** Displays the PurchaseView for any Paddle Product ID
  *
- * @param productId A String containing a Paddle Product ID
+ * @param childProductId A String containing a Paddle Product ID
  * @param window An NSWindow the purchase window should be attached as a sheet to if required. Can be nil for this to presented modally..
  * @param completionBlock A block to be called when a purchase has completed, returning the email address used along with the licence code. If the product is a subscription product the response will contain an order ID
  */
-- (void)purchaseProductId:(nonnull NSString *)productId withWindow:(nullable NSWindow *)window completionBlock:(nonnull void (^)(NSString * _Nullable response, NSString * _Nullable email, BOOL completed, NSError * _Nullable error, NSDictionary * _Nullable checkoutData))completionBlock;
+- (void)purchaseChildProduct:(nonnull NSString *)childProductId withWindow:(nullable NSWindow *)window completionBlock:(nonnull void (^)(NSString * _Nullable response, NSString * _Nullable email, BOOL completed, NSError * _Nullable error, NSDictionary * _Nullable checkoutData))completionBlock;
+
+/** Sets up a feature product (sub product of your main product)
+ *
+ * @param childProductId A String containing the Paddle Product ID.
+ * @param productInfo A dictionary containing product information and trial settings. Used for first run/no internet, data is overwritten with response from Paddle API.
+ * @param timeTrial A BOOL indicating if the feature product should be a time limited trial.
+ */
+- (void)setupChildProduct:(nonnull NSString *)childProductId productInfo:(nonnull NSDictionary<NSString *, NSString *> *)productInfo timeTrial:(BOOL)timeTrial;
+
 
 /** Returns the number of days remaining on the users trial. Can be a negative number (-20 would indicate the trial ended 20 days ago)
  *
@@ -209,11 +234,25 @@
  */
 - (nonnull NSNumber *)daysRemainingOnTrial;
 
+/** Returns the number of days remaining on the users trial. Can be a negative number (-20 would indicate the trial ended 20 days ago)
+ *
+ * @param childProductId A string containing the Paddle Product ID
+ * @return An NSNumber of the days remaining on the users trial for the product.
+ */
+- (nonnull NSNumber *)daysRemainingOnTrialForChildProduct:(nonnull NSString *)childProductId;
+
 /** Returns BOOL indicating if the product is activated.
  *
  * @return A BOOL indicating if the product is activated.
  */
 - (BOOL)productActivated;
+
+/** Returns BOOL indicating if a product is activated.
+ *
+ * @param childProductId string containing the Paddle Product ID
+ * @return A BOOL indicating if the request product is activated.
+ */
+- (BOOL)childProductActivated:(nonnull NSString *)childProductId;
 
 /** Displays the Licensing/Activation Window. If the product is activated this will display the activated licence code.
  */
@@ -237,9 +276,15 @@
 
 /** Displays the ActivateView for your product. One of the startLicensing methods must have been called before this
  *
- * @param window An NSWindow the purchase window should be attached as a sheet to if required. Can be nil for this to presented modally..
+ * @param window An NSWindow the purchase window should be attached as a sheet to if required. Can be nil for this to presented modally.
  */
 - (void)showActivateLicenceWithWindow:(nullable NSWindow *)window;
+/** Displays the ActivateView for a product. One of the startLicensing methods must have been called before this
+ *
+ * @param window An NSWindow the purchase window should be attached as a sheet to if required. Can be nil for this to presented modally.
+ * @param childProductId A string containing the Paddle Product ID.
+ */
+- (void)showActivateLicenceWithWindow:(nullable NSWindow *)window forChildProduct:(nonnull NSString *)childProductId;
 
 /** Displays the ActivateView for your product. One of the startLicensing methods must have been called before this
  *
@@ -250,6 +295,16 @@
  */
 - (void)showActivateLicenceWithWindow:(nullable NSWindow *)window licenceCode:(nullable NSString *)licenceCode email:(nullable NSString *)email withCompletionBlock:(nonnull void(^)(BOOL activated))completionBlock;
 
+/** Displays the ActivateView for a product.
+ *
+ * @param window An NSWindow the purchase window should be attached as a sheet to if required. Can be nil for this to presented modally.
+ * @param licenceCode an NSString to pre-fill the licence code with.
+ * @param email an NSString to pre-fill the email with.
+ * @param childProductId A string containing the Paddle Product ID.
+ * @param completionBlock A block to be called when an activation has completed, returning activation BOOL to indicate if the activation was successful.
+ */
+- (void)showActivateLicenceWithWindow:(nullable NSWindow *)window licenceCode:(nullable NSString *)licenceCode email:(nullable NSString *)email forChildProduct:(nonnull NSString *)childProductId withCompletionBlock:(nonnull void(^)(BOOL activated))completionBlock;
+
 /** Activate a licence for your product without display any Paddle UI. One of the startLicensing methods must have been called before this
  *
  * @param licenceCode an NSString for the licence to activate.
@@ -258,15 +313,37 @@
  */
 - (void)activateLicence:(nonnull NSString *)licenceCode email:(nonnull NSString *)email withCompletionBlock:(nonnull void (^)(BOOL activated, NSError * _Nonnull error))completionBlock;
 
+/** Activate a licence for a product without display any Paddle UI. One of the startLicensing methods must have been called before this
+ *
+ * @param licenceCode an NSString for the licence to activate.
+ * @param email an NSString for the email to be used with activation.
+ * @param childProductId A string containing the Paddle Product ID.
+ * @param completionBlock A block to be called when an activation has completed, returning activated BOOL to indicate if the activation was successful and an NSError error if it was unsuccessful.
+ */
+- (void)activateLicence:(nonnull NSString *)licenceCode email:(nonnull NSString *)email forChildProduct:(nonnull NSString *)childProductId withCompletionBlock:(nonnull void (^)(BOOL activated, NSError * _Nullable error))completionBlock;
+
 /** Remotely verify the existing activation in an effort to detect cracked licences.
  *
  * @param completionBlock A block to be called when an a remote verification has been performed. Returning a BOOL verified if the verification was successful and an NSError if it was not.
  */
 - (void)verifyLicenceWithCompletionBlock:(nonnull void (^)(BOOL verified, NSError * _Nullable error))completionBlock;
 
+/** Remotely verify an existing activation for a product in an effort to detect cracked licences.
+ *
+ * @param childProductId A string containing the Paddle Product ID.
+ * @param completionBlock A block to be called when an a remote verification has been performed. Returning a BOOL verified if the verification was successful and an NSError if it was not.
+ */
+- (void)verifyLicenceForChildProduct:(nonnull NSString *)childProductId withCompletionBlock:(nonnull void (^)(BOOL verified, NSError * _Nullable error))completionBlock;
+
 /** Deactivate the current licence. A delegate method will be called if implemented on success/fail
  */
 - (void)deactivateLicence;
+
+/** Deactivate the current licence. A delegate method will be called if implemented on success/fail
+ *
+ * @param childProductId A string containing the Paddle Product ID.
+ */
+- (void)deactivateLicenceForChildProduct:(nonnull NSString *)childProductId;
 
 /** Deactivate the current licence.
  *
@@ -384,6 +461,8 @@
  * @param checkoutAttributes An NSDictionary containing a list of custom attributes. A list can be found at: https://paddle.com/docs/paddlejs-buttons-checkout
  */
 - (void)setCustomCheckoutAttributes:(nonnull NSDictionary<NSString *, id> *)checkoutAttributes;
+
+- (void)forceLoadLicense;
 
 
 @end
