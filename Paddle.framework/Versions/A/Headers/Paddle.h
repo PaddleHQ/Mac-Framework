@@ -213,6 +213,14 @@ typedef enum licenseTypes
 
 /** Displays the PurchaseView for any Paddle Product ID
  *
+ * @param productId A String containing a Paddle Product ID
+ * @param window An NSWindow the purchase window should be attached as a sheet to if required. Can be nil for this to presented modally..
+ * @param completionBlock A block to be called when a purchase has completed, returning the email address used along with the licence code. If the product is a subscription product the response will contain an order ID
+ */
+- (void)purchaseProduct:(nonnull NSString *)productId withWindow:(nullable NSWindow *)window completionBlock:(nonnull void (^)(NSString * _Nullable response, NSString * _Nullable email, BOOL completed, NSError * _Nullable error, NSDictionary * _Nullable checkoutData))completionBlock;
+
+/** Displays the PurchaseView for any Paddle Child Product ID
+ *
  * @param childProductId A String containing a Paddle Product ID
  * @param window An NSWindow the purchase window should be attached as a sheet to if required. Can be nil for this to presented modally..
  * @param completionBlock A block to be called when a purchase has completed, returning the email address used along with the licence code. If the product is a subscription product the response will contain an order ID
