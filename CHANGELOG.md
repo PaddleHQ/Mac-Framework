@@ -1,3 +1,9 @@
+# 3.0.26
+- Fixed: Crash when displaying activation window with not all product information
+- Fixed: Not accurately using failedAttempts value from delegate method
+- Fixed: Product remaining activated after deactivation in some scenarios
+- Fixed: Calling deactivate with no licence crashes
+
 # 3.0.25
 - Added: Provisional 10.13 Support
 - Added: PayPal checkout window title now updates based on state from PayPal.
