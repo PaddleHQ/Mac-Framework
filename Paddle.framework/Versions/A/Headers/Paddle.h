@@ -34,6 +34,11 @@
 #define kPADCheckoutAllowQuantity @"allowQuantity"
 #define kPADCheckoutReferrer @"referrer"
 #define kPADCheckoutDisableLogout @"disableLogout"
+#define kPADCheckoutAuthHash @"auth"
+#define kPADCheckoutPriceCurrency @"currency"
+#define kPADCheckoutPrice @"price"
+#define kPADCheckoutPrices @"prices"
+#define kPADCheckoutRecurringPrices @"recurringPrices"
 
 #import <Foundation/Foundation.h>
 #import <Cocoa/Cocoa.h>

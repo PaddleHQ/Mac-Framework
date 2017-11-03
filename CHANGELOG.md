@@ -1,3 +1,7 @@
+# 3.0.27
+- Added: Ability to override prices in multiple currencies and recurring prices
+- Fixed: Issue where debugging option to reset trial would not disable
+
 # 3.0.26
 - Fixed: Crash when displaying activation window with not all product information
 - Fixed: Not accurately using failedAttempts value from delegate method
