@@ -1,3 +1,7 @@
+# 3.0.28
+- Fixed: Timeout when orders are flagged after checkout
+- Fixed: Changed product id check when activating licences to only apply to child products
+
 # 3.0.27
 - Added: Ability to override prices in multiple currencies and recurring prices
 - Fixed: Issue where debugging option to reset trial would not disable
