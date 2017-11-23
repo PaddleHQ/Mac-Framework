@@ -1,3 +1,7 @@
+# 3.0.29
+- Fixed: PayPal instability on older OS X versions.
+- Fixed: Activation issues for products being activated with licenses generated for another product when on newer versions of MacOS.
+
 # 3.0.28
 - Fixed: Timeout when orders are flagged after checkout
 - Fixed: Changed product id check when activating licences to only apply to child products
