@@ -1,3 +1,8 @@
+# 3.0.30
+- Fixed: Crash when viewing incomplete licence details
+- Fixed: Reduced calls to analytics endpoints
+- Added: Option to purge v2 licenses with remote verification
+
 # 3.0.29
 - Fixed: PayPal instability on older OS X versions.
 - Fixed: Activation issues for products being activated with licenses generated for another product when on newer versions of MacOS.
