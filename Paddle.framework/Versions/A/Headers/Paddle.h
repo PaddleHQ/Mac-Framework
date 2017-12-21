@@ -157,6 +157,11 @@ typedef enum licenseTypes
  */
 @property (assign) BOOL shouldAutoVerify;
 
+/**
+ Should remove ambiguous licenses when verification has failed
+ */
+@property (assign) BOOL shouldRemoveAmbiguousLicenses;
+
 
 
 + (nonnull Paddle *)sharedInstance;
