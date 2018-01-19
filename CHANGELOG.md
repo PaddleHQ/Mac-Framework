@@ -1,3 +1,6 @@
+# 3.0.31
+- Fixed: SilentLicensing inconsistently setting and decrementing remaining trial days
+
 # 3.0.30
 - Fixed: Crash when viewing incomplete licence details
 - Fixed: Reduced calls to analytics endpoints
