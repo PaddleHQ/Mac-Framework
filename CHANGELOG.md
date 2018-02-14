@@ -1,3 +1,7 @@
+# 3.0.32
+- Added: `overridePriceForChildProduct` method
+- Fixed: Swift nullability annotations on completion blocks to match actual usage.
+
 # 3.0.31
 - Fixed: SilentLicensing inconsistently setting and decrementing remaining trial days
 

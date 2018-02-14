@@ -215,7 +215,7 @@ typedef enum licenseTypes
  * @param window An NSWindow the purchase window should be attached as a sheet to if required. Can be nil for this to presented modally..
  * @param completionBlock A block to be called when a purchase has completed, returning the email address used along with the licence code.
  */
-- (void)startPurchaseWithWindow:(nonnull NSWindow *)window completionBlock:(nullable void (^)( NSString * _Nullable email,  NSString * _Nullable licenceCode, BOOL activate, NSDictionary * _Nullable  checkoutData))completionBlock;
+- (void)startPurchaseWithWindow:(nullable NSWindow *)window completionBlock:(nullable void (^)( NSString * _Nullable email,  NSString * _Nullable licenceCode, BOOL activate, NSDictionary * _Nullable  checkoutData))completionBlock;
 
 /** Opens the default browser on a purchase page for the product.
  */
@@ -329,7 +329,7 @@ typedef enum licenseTypes
  * @param email an NSString for the email to be used with activation..
  * @param completionBlock A block to be called when an activation has completed, returning activated BOOL to indicate if the activation was successful and an NSError error if it was unsuccessful.
  */
-- (void)activateLicence:(nonnull NSString *)licenceCode email:(nonnull NSString *)email withCompletionBlock:(nonnull void (^)(BOOL activated, NSError * _Nonnull error))completionBlock;
+- (void)activateLicence:(nonnull NSString *)licenceCode email:(nonnull NSString *)email withCompletionBlock:(nonnull void (^)(BOOL activated, NSError * _Nullable error))completionBlock;
 
 /** Activate a licence for a product without display any Paddle UI. One of the startLicensing methods must have been called before this
  *
@@ -430,6 +430,15 @@ typedef enum licenseTypes
  * @param completionBlock A block to be called when a purchase has completed, returning the email address used along with the licence code.
  */
 - (void)overridePrice:(nonnull NSString *)price withWindow:(nullable NSWindow *)window completionBlock:(nonnull void (^)(NSString * _Nullable email, NSString * _Nullable licenceCode, BOOL activate, NSDictionary * _Nullable checkoutData))completionBlock;
+
+/** Override the current price of a child product and display the PurchaseView.
+ *
+ * @param price An NSString containing the desired price in USD.
+ * @param window An NSWindow the purchase window should be attached as a sheet to if required. Can be nil for this to presented modally.
+ * @param childProductId an NSString containing the child product id
+ * @param completionBlock A block to be called when a purchase has completed, returning the email address used along with the licence code.
+ */
+- (void)overridePrice:(nonnull NSString *)price withWindow:(nullable NSWindow *)window forChildProduct:(nonnull NSString *)childProductId completionBlock:(nonnull void (^)(NSString * _Nullable email, NSString * _Nullable licenceCode, BOOL activate, NSDictionary * _Nullable checkoutData))completionBlock;
 
 /** Override the current price of the product and display the PurchaseView. One of the startLicensing methods must be called before using this.
  *
