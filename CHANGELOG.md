@@ -1,3 +1,6 @@
+# 3.0.33
+- Fixed: Crash on app launch when calling an unset Delegate, typically when using Silent Licensing.
+
 # 3.0.32
 - Added: `overridePriceForChildProduct` method
 - Fixed: Swift nullability annotations on completion blocks to match actual usage.
