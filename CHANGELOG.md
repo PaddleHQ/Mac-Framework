@@ -1,3 +1,6 @@
+# 3.0.34
+- Added: Audience (PaddleToolKit) updates for GDPR compliance, more details here (https://paddle.com/docs/gdpr-changes)
+
 # 3.0.33
 - Fixed: Crash on app launch when calling an unset Delegate, typically when using Silent Licensing.
 

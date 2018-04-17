@@ -28,6 +28,7 @@
 #define kPADTrialExpired @"TrialExpired"
 
 #define kPADCheckoutEmail @"email"
+#define kPADCheckoutMarketingConsent @"marketing_consent"
 #define kPADCheckoutCountry @"country"
 #define kPADCheckoutZip @"postcode"
 #define kPADCheckoutQuantity @"quantity"
@@ -83,7 +84,6 @@ typedef enum licenseTypes
     BOOL willShowActivationAlert;
     BOOL willContinueAtTrialEnd;
     BOOL willShowDeactivateLicenceButton;
-    BOOL willPromptForEmailToStartTrial;
     
     #if !__has_feature(objc_arc)
     id <PaddleDelegate> delegate;
@@ -141,11 +141,6 @@ typedef enum licenseTypes
  When viewing an activated licence should a deactivate button be displayed (default = NO)
  */
 @property (assign) BOOL willShowDeactivateLicenceButton;
-
-/**
- Should the SDK prompt a user for an email before starting a trial (default = NO)
- */
-@property (assign) BOOL willPromptForEmailToStartTrial;
 
 /**
  Should the licence be stored globally for all users on the machine (default = NO)
