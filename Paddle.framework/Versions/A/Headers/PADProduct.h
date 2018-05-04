@@ -20,9 +20,10 @@
     NSString *aProductId;
 }
 
-@property (nullable, assign) id delegate;
+@property (nullable, strong) id delegate;
 @property (nullable, copy) NSString *aProductId;
 
 - (void)productInfo:(nonnull NSString *)productId apiKey:(nonnull NSString *)apiKey vendorId:(nonnull NSString *)vendorId;
+- (void)productInfo:(nonnull NSString *)productId apiKey:(nonnull NSString *)apiKey vendorId:(nonnull NSString *)vendorId withCompletionBlock:(void (^_Nullable)(BOOL finished))completionBlock;
 
 @end

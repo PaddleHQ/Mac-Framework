@@ -1,3 +1,8 @@
+# 3.0.35
+- Fixed: File access race condition between auto verification and manually triggered.
+- Fixed: Swift implementations not always verifying the Paddle delegate existed before messaging.
+- Fixed: Price override checkout flows without showing product info will now resolve any missing required data.
+
 # 3.0.34
 - Added: Audience (PaddleToolKit) updates for GDPR compliance, more details here (https://paddle.com/docs/gdpr-changes)
 

@@ -27,6 +27,7 @@
 @property (assign) int failedAttempts;
 @property (assign) BOOL isSilentLicensing;
 @property (nonatomic, strong) NSDictionary *jsAttributes;
+@property (nonatomic, assign) dispatch_queue_t persistenceQueue;
 
 + (PADDataStore *)sharedInstance;
 - (void)migrateData;
