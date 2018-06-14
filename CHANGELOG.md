@@ -1,3 +1,8 @@
+# 3.0.36
+- Fixed: File system write queue exception edge cases.
+- Fixed: Order status polling timer not invalidated in certain cases.
+- Fixed: Completion block race condition on child product activations.
+
 # 3.0.35
 - Fixed: File access race condition between auto verification and manually triggered.
 - Fixed: Swift implementations not always verifying the Paddle delegate existed before messaging.
