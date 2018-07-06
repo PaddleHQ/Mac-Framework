@@ -1,3 +1,6 @@
+# 3.0.37
+- Fixed: Child Product license expiry dates now correctly destroyed on deactivation.
+
 # 3.0.36
 - Fixed: File system write queue exception edge cases.
 - Fixed: Order status polling timer not invalidated in certain cases.

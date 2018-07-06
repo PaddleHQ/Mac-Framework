@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   }
 
   s.platform = :osx, '10.7'
-  s.source   = { :http => "https://github.com/PaddleHQ/Mac-Framework/archive/v3.0.36.tar.gz" }
+  s.source   = { :http => "https://github.com/PaddleHQ/Mac-Framework/archive/v3.0.37.tar.gz" }
 
   s.vendored_framework  = 'Paddle.framework'
   s.requires_arc        = false
