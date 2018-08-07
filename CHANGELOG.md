@@ -1,3 +1,6 @@
+# 3.0.38
+- Fixed: Child products with no expiry date being treated as expired in some circumstances.
+
 # 3.0.37
 - Fixed: Child Product license expiry dates now correctly destroyed on deactivation.
 
