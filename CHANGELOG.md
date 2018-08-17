@@ -1,3 +1,8 @@
+# 3.0.39
+- Fixed: UI display issues when operating in 10.14 dark mode
+- Fixed: Deactivations sometimes causing issues with restarting trials
+- Fixed: simplifyViews option now working again
+
 # 3.0.38
 - Fixed: Child products with no expiry date being treated as expired in some circumstances.
 
