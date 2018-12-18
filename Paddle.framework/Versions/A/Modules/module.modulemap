@@ -6,5 +6,6 @@ framework module Paddle {
     header "PADProduct.h"
     header "PSKProduct.h"
     header "PSKReceipt.h"
+    header "PADKeyWindow.h"
     export *
 }

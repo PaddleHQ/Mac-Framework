@@ -43,6 +43,7 @@
 
 #import <Foundation/Foundation.h>
 #import <Cocoa/Cocoa.h>
+#import "PADKeyWindow.h"
 
 typedef enum licenseTypes
 {
@@ -69,7 +70,7 @@ typedef enum licenseTypes
 @class PADActivateWindowController;
 @class PADBuyWindowController;
 
-@interface Paddle : NSObject {
+@interface Paddle : NSObject <PADKeyWindowDelegate> {
     PADProductWindowController *productWindow;
     PADActivateWindowController *activateWindow;
     PADBuyWindowController *buyWindow;

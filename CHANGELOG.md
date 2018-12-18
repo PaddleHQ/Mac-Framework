@@ -1,3 +1,8 @@
+# 3.0.40
+- Added: More detailed console logs for file write issues.
+- Fixed: Crashes around deprecated `beginSheet` methods.
+- Fixed: Site Licensing will fall back to per user activation if unable to write to disk.
+
 # 3.0.39
 - Fixed: UI display issues when operating in 10.14 dark mode
 - Fixed: Deactivations sometimes causing issues with restarting trials
