@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name        = "Paddle"
-  s.version     = "3.0.40"
+  s.version     = "3.0.41"
   s.summary     = "A licensing framework for OS X"
   s.description = "Paddle is an easy to use licensing framework for OS X including App Licensing and In App Purchases."
   s.homepage    = "https://www.paddle.com"
