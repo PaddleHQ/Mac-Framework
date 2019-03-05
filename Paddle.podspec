@@ -13,6 +13,9 @@ Pod::Spec.new do |s|
     'Christian Owens' => 'christian@paddle.com',
   }
 
+  s.deprecated = true
+  s.deprecated_in_favor_of = 'PaddleV4'
+
   s.platform = :osx, '10.7'
   s.source   = { :http => "https://github.com/PaddleHQ/Mac-Framework/archive/v3.0.40.tar.gz" }
 
