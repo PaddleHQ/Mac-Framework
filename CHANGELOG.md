@@ -1,3 +1,9 @@
+# 3.0.42
+- Fixed: App crashes when upgrading to Catalina.
+
+The bug only affected users that have activated their license before v3 and implementations where remote verification methods are used without checking if a license exists first. 
+Because the underlying implementation of NSData has changed in Catalina the verify method will incorrectly continue with remote verification when it can't find a local license code.
+
 # 3.0.40
 - Added: More detailed console logs for file write issues.
 - Fixed: Crashes around deprecated `beginSheet` methods.
